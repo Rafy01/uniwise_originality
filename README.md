@@ -1,6 +1,10 @@
 # UNIwise Originality Landing Page
 
-Marketing landing page for UNIwise's Originality product.
+Landing page for UNIwise's Originality product. 
+
+## Product team
+* [@rafy01](https://github.com/rafy01)
+
 
 ## Commands
 
