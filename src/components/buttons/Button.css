@@ -6,7 +6,7 @@
 
 /* Reset */
 .btn {
-  font-family: inherit;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   border: none;
   background: none;
@@ -85,18 +85,19 @@
   align-items: center;
 }
 .btn__burger-line {
-  width: 20px;
+  width: 30px;
   height: 2px;
   background: var(--color-black);
   transition: transform 0.3s ease;
+  font-size: 200px !important;
 }
 .btn__burger-line + .btn__burger-line {
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 /* Når menu-mobile er åbnet */
 .btn--menu-mobile--open .btn__burger-line:first-child {
-  transform: rotate(45deg) translate(3px, 3px);
+  transform: rotate(45deg) translate(6px, 3px);
 }
 .btn--menu-mobile--open .btn__burger-line:last-child {
   transform: rotate(-45deg) translate(3px, -3px);
@@ -105,10 +106,12 @@
 /* Hjælpeklasse til skærmlæsere */
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -121,8 +124,8 @@
     font-size: 0.75rem;
   }
   .btn--menu {
-    width: 90px;
-    height: 36px;
+    width: 142px;
+    height: 32px;
     font-size: 0.75rem;
   }
 }
