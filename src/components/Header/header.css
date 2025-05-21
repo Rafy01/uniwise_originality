@@ -1,0 +1,201 @@
+/* src/components/header/header.css */
+
+:root {
+  --color-primary: #85B100;
+  --color-primary-dark: #15803d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+/* ————————————————
+   Skip-link (screenreader + keyboard)
+   ———————————————— */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-white);
+  color: var(--color-primary);
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s ease;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Grundstruktur */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-primary);
+}
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.header__logo-img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Desktop-nav (kun ≥768px) */
+.nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    gap: 32px;
+    margin-left: 32px;
+  }
+}
+
+/* Nav-item container */
+.nav__item {
+  position: relative;
+}
+
+/* Link-styling */
+.nav__link {
+  position: relative;
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 1rem;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-black);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.nav__link:hover::after,
+.nav__link:focus::after,
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Submenu */
+@media (min-width: 768px) {
+  .nav__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-primary);
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    z-index: 100;
+  }
+  .nav__item:hover > .nav__submenu,
+  .nav__item:focus-within > .nav__submenu {
+    display: flex;
+  }
+  .nav__submenu > a,
+  .nav__submenu .nav__link {
+    margin-left: 5px;
+  }
+}
+
+/* Desktop CTA */
+.cta-button {
+  display: none;
+}
+@media (min-width: 768px) {
+  .cta-button {
+    display: inline-block;
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .cta-button:hover,
+  .cta-button:focus {
+    background: var(--color-primary-dark);
+  }
+}
+
+/* Mobile toggle */
+.mobile-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* Mobilmenu */
+.mobile-menu {
+  display: none;
+}
+/* Mobilmenu (kun <768px) */
+@media (max-width: 767px) {
+  .mobile-menu {
+    position: fixed;
+    top: 64px; /* Skub menuen ned under headeren */
+    left: 0;
+    width: 100vw; /* Fuld bredde */
+    height: calc(100vh - 64px); /* Fuld højde minus header */
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary);
+    padding: 16px;
+    overflow-y: auto; /* Scroll hvis indholdet er for højt */
+    z-index: 50; /* Under headerens z-index:1000 */
+  }
+
+  .mobile-menu__item {
+    margin-bottom: 16px;
+  }
+  .mobile-menu__link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.25rem; /* lidt større touch-venlig tekst */
+    padding: 12px 0;
+    display: block;
+    text-align: center;
+  }
+  .mobile-menu__link:hover,
+  .mobile-menu__link:focus {
+    text-decoration: underline;
+  }
+
+  /* Brug din nye Button-komponent */
+  .mobile-menu .btn--menu {
+    display: block;
+    margin: 24px auto 0;
+  }
+}

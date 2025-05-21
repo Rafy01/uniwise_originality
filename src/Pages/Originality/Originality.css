@@ -1,0 +1,13 @@
+.Originality h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.Originality p {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

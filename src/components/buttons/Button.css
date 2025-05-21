@@ -1,124 +1,131 @@
+/* src/components/button/Button.css */
 :root {
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-primary: #16a34a; /* til fokus-ring */
-  }
-  
-  /* Base */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    line-height: 1;
-    border-radius: 5px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
-  
-  /* FOCUS / A11Y */
-  .btn:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-  }
-  .btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  /* Primary */
-  .btn--primary {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border: none;
-    width: 142px;
-    height: 32px;
-  }
-  .btn--primary:hover:not(:disabled),
-  .btn--primary:focus:not(:disabled) {
-    background-color: #222;
-  }
-  
-  /* Secondary */
-  .btn--secondary {
-    background-color: transparent;
-    color: var(--color-black);
-    border: 1px solid var(--color-black);
-    width: 142px;
-    height: 32px;
-  }
-  .btn--secondary:hover:not(:disabled),
-  .btn--secondary:focus:not(:disabled) {
-    background-color: rgba(0,0,0,0.05);
-  }
-  
-  /* Menu CTA */
-  .btn--menu {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border: none;
-    width: 100px;
-    height: 40px;
-  }
-  .btn--menu:hover:not(:disabled),
-  .btn--menu:focus:not(:disabled) {
-    background-color: #222;
-  }
-  
-  /* Responsivt: mindre knapper på mobil */
-  @media (max-width: 767px) {
-    .btn--primary,
-    .btn--secondary {
-      width: 120px;
-      height: 28px;
-      font-size: 0.875rem;
-    }
-    .btn--menu {
-      width: 80px;
-      height: 36px;
-      font-size: 0.875rem;
-    }
-  }
+  --color-black: #000;
+  --color-white: #fff;
+}
+
+/* Reset */
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Primary */
+.btn--primary {
+  width: 142px;
+  height: 32px;
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 5px;
+  font-size: 0.875rem;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  opacity: 0.85;
+}
+
+/* Secondary */
+.btn--secondary {
+  width: 142px;
+  height: 32px;
+  background: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  border-radius: 5px;
+  font-size: 0.875rem;
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Menu-CTA (desktop “REQUEST A DEMO” i nav) */
+.btn--menu {
+  width: 100px;
+  height: 40px;
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 5px;
+  font-size: 0.875rem;
+}
+.btn--menu:hover,
+.btn--menu:focus {
+  opacity: 0.85;
+}
+
+/* Mobile-burger (vises default, skjules på desktop) */
+.btn--menu-mobile {
+  width: 40px;
+  height: 40px;
+  background: none;
+  position: relative;
+  display: flex; /* synlig på alle viewports under 768px */
+  align-items: center;
+  justify-content: center;
+}
+.btn--menu-mobile:focus {
+  outline: 2px solid var(--color-black);
+}
+
+/* Skjul burger på desktop */
+@media (min-width: 768px) {
   .btn--menu-mobile {
-    /* Ingen tekst, kun to streger */
-    background: none;
-    border: none;
-    width: 32px;
-    height: 15px;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
+    display: none;
   }
-  
-  /* Top- og bund-streg */
-  .btn--menu-mobile::before,
-  .btn--menu-mobile::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--color-white);
-    transition: top 0.3s ease, bottom 0.3s ease, transform 0.3s ease,
-      opacity 0.3s ease;
+}
+
+/* Selve burger-ikonet */
+.btn__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn__burger-line {
+  width: 30px;
+  height: 2px;
+  background: var(--color-black);
+  transition: transform 0.3s ease;
+  font-size: 200px !important;
+}
+.btn__burger-line + .btn__burger-line {
+  margin-top: 10px;
+}
+
+/* Når menu-mobile er åbnet */
+.btn--menu-mobile--open .btn__burger-line:first-child {
+  transform: rotate(45deg) translate(6px, 3px);
+}
+.btn--menu-mobile--open .btn__burger-line:last-child {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+/* Hjælpeklasse til skærmlæsere */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Downscale knapper på mobil */
+@media (max-width: 767px) {
+  .btn--primary,
+  .btn--secondary {
+    width: 120px;
+    height: 28px;
+    font-size: 0.75rem;
   }
-  
-  /* Start-position */
-  .btn--menu-mobile::before {
-    top: 0;
+  .btn--menu {
+    width: 142px;
+    height: 32px;
+    font-size: 0.75rem;
   }
-  .btn--menu-mobile::after {
-    bottom: 0;
-  }
-  
-  /* Når isOpen === true */
-  .btn--menu-mobile.btn--menu-mobile--open::before {
-    top: 50%;
-    transform: rotate(45deg);
-  }
-  .btn--menu-mobile.btn--menu-mobile--open::after {
-    bottom: 50%;
-    transform: rotate(-45deg);
-  }
-  
+}

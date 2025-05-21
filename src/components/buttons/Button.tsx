@@ -23,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   const cls = [
     "btn",
     `btn--${variant}`,
-    isOpen && variant === "menu-mobile" ? "btn--menu-mobile--open" : "",
+    variant === "menu-mobile" && isOpen ? "btn--menu-mobile--open" : "",
     className,
   ]
     .filter(Boolean)
@@ -31,8 +31,19 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button className={cls} {...props}>
+      {/* hvis det ikke er burger, så vis children */}
       {variant !== "menu-mobile" && children}
-      {/* for menu-mobile bruger vi pseudo-elementer */}
+
+      {/* burger-lines (skjult content for screenreaders) */}
+      {variant === "menu-mobile" && (
+        <span className="btn__burger" aria-hidden="true">
+          <span className="btn__burger-line" />
+          <span className="btn__burger-line" />
+        </span>
+      )}
+      <span className="sr-only">
+        {variant === "menu-mobile" ? (isOpen ? "Close menu" : "Open menu") : ""}
+      </span>
     </button>
   );
 };
