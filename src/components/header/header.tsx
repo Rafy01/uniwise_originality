@@ -3,8 +3,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { HeaderProps } from "./header.types";
-import "./header.css";
+import { HeaderProps } from "./Header.types";
+import "./Header.css";
 
 export function Header({ navItems, onCtaClick }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
