@@ -3,6 +3,7 @@ import React from "react";
 import { Header } from "../../components/Header/Header";
 import { NavItem } from "@/components/Header/Header.types";
 import { Button } from "@/components/Buttons/Button";
+import { Typography } from "@/components/Typography/Typography";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -32,6 +33,14 @@ export default function OriginalityPage() {
         <Button variant="secondary" type="button">
           Blog
         </Button>
+
+        <Typography variant="h1">Titel / Hero</Typography>
+        <Typography variant="h2">Sektionstitel</Typography>
+        <Typography variant="h3">Undersektion</Typography>
+        <Typography variant="h4">Cards / Bokstitel</Typography>
+        <Typography variant="body">
+          Her er noget brødtekst i 18pt med 24pt line-height.
+        </Typography>
       </main>
     </>
   );
