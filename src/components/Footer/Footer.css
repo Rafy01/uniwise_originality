@@ -1,0 +1,97 @@
+/* Footer.css */
+
+.footer {
+    padding: 64px 16px 32px;
+    color: #000;
+    background: transparent; /* gradient ligger i global styles */
+  }
+  
+  .footer__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  
+  .footer__logo {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .footer__cta-text h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .footer__cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .footer__linkedin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    transition: opacity 0.2s ease;
+  }
+  .footer__linkedin:hover,
+  .footer__linkedin:focus {
+    opacity: 0.8;
+  }
+  
+  .footer__nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  
+  .footer__col h3 {
+    margin-bottom: 12px;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  
+  .footer__col a {
+    display: block;
+    color: #5c8a1e; /* primær linkfarve */
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+  }
+  .footer__col a:hover,
+  .footer__col a:focus {
+    text-decoration: underline;
+  }
+  
+  .footer__bottom {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+  
+  /* MobileResponsivitet */
+  @media (min-width: 768px) {
+    .footer__cta {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+  
+    .footer__cta-text h2 {
+      font-size: 2rem;
+    }
+  }
+  
