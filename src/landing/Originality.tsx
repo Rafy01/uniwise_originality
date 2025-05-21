@@ -2,6 +2,7 @@
 import React from "react";
 import { Header } from "../components/header/Header";
 import { NavItem } from "@/components/header/Header.types";
+import { Button } from "@/components/buttons/Button";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -25,6 +26,15 @@ export default function OriginalityPage() {
       <main id="main-content">
         {/* Dit landingsside-indhold her */}
         <a> hallo there </a>
+        <Button variant="primary" onClick={() => alert("Primær!")}>
+          Read more
+        </Button>
+
+        <Button variant="secondary" type="button">
+          Blog
+        </Button>
+
+        <Button variant="menu">Request a demo</Button>
       </main>
     </>
   );

@@ -17,7 +17,7 @@
   background: var(--color-white);
   color: var(--color-primary);
   padding: 8px 16px;
-  z-index: 1001;
+  z-index: 1000;
   transition: top 0.3s ease;
   font-size: 0.875rem;
   text-decoration: none;
@@ -161,30 +161,41 @@
 .mobile-menu {
   display: none;
 }
+/* Mobilmenu (kun <768px) */
 @media (max-width: 767px) {
   .mobile-menu {
+    position: fixed;
+    top: 64px;                           /* Skub menuen ned under headeren */
+    left: 0;
+    width: 100vw;                        /* Fuld bredde */
+    height: calc(100vh - 64px);         /* Fuld højde minus header */
     display: flex;
     flex-direction: column;
     background: var(--color-primary);
     padding: 16px;
+    overflow-y: auto;                   /* Scroll hvis indholdet er for højt */
+    z-index: 50;                         /* Under headerens z-index:1000 */
   }
+
   .mobile-menu__item {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
   .mobile-menu__link {
     color: var(--color-white);
     text-decoration: none;
-    font-size: 1rem;
-    padding: 8px 0;
+    font-size: 1.25rem;                  /* lidt større touch-venlig tekst */
+    padding: 12px 0;
     display: block;
+    text-align: center;
   }
   .mobile-menu__link:hover,
   .mobile-menu__link:focus {
     text-decoration: underline;
   }
-  .mobile-menu .cta-button {
+
+  /* Brug din nye Button-komponent */
+  .mobile-menu .btn--menu {
     display: block;
-    width: 100%;
-    margin-top: 8px;
+    margin: 24px auto 0;
   }
 }

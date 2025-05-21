@@ -1,0 +1,124 @@
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-primary: #16a34a; /* til fokus-ring */
+  }
+  
+  /* Base */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  /* FOCUS / A11Y */
+  .btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Primary */
+  .btn--primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    width: 142px;
+    height: 32px;
+  }
+  .btn--primary:hover:not(:disabled),
+  .btn--primary:focus:not(:disabled) {
+    background-color: #222;
+  }
+  
+  /* Secondary */
+  .btn--secondary {
+    background-color: transparent;
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    width: 142px;
+    height: 32px;
+  }
+  .btn--secondary:hover:not(:disabled),
+  .btn--secondary:focus:not(:disabled) {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  /* Menu CTA */
+  .btn--menu {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    width: 100px;
+    height: 40px;
+  }
+  .btn--menu:hover:not(:disabled),
+  .btn--menu:focus:not(:disabled) {
+    background-color: #222;
+  }
+  
+  /* Responsivt: mindre knapper på mobil */
+  @media (max-width: 767px) {
+    .btn--primary,
+    .btn--secondary {
+      width: 120px;
+      height: 28px;
+      font-size: 0.875rem;
+    }
+    .btn--menu {
+      width: 80px;
+      height: 36px;
+      font-size: 0.875rem;
+    }
+  }
+  .btn--menu-mobile {
+    /* Ingen tekst, kun to streger */
+    background: none;
+    border: none;
+    width: 32px;
+    height: 15px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* Top- og bund-streg */
+  .btn--menu-mobile::before,
+  .btn--menu-mobile::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--color-white);
+    transition: top 0.3s ease, bottom 0.3s ease, transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  
+  /* Start-position */
+  .btn--menu-mobile::before {
+    top: 0;
+  }
+  .btn--menu-mobile::after {
+    bottom: 0;
+  }
+  
+  /* Når isOpen === true */
+  .btn--menu-mobile.btn--menu-mobile--open::before {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  .btn--menu-mobile.btn--menu-mobile--open::after {
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+  
