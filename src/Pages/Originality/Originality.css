@@ -6,3 +6,8 @@
 .Originality p {
   font-size: 1.25rem;
 }
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

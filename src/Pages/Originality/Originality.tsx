@@ -1,6 +1,6 @@
 // src/landing/Originality.tsx
 import React from "react";
-import { Header } from "../components/Header/Header";
+import { Header } from "../../components/Header/Header";
 import { NavItem } from "@/components/Header/Header.types";
 import { Button } from "@/components/Buttons/Button";
 
@@ -25,7 +25,6 @@ export default function OriginalityPage() {
       <Header navItems={navItems} onCtaClick={() => alert("Demo requested!")} />
       <main id="main-content">
         {/* Dit landingsside-indhold her */}
-        <a> hallo there </a>
         <Button variant="primary" onClick={() => alert("Primær!")}>
           Read more
         </Button>
@@ -33,8 +32,6 @@ export default function OriginalityPage() {
         <Button variant="secondary" type="button">
           Blog
         </Button>
-
-        <Button variant="menu">Request a demo</Button>
       </main>
     </>
   );

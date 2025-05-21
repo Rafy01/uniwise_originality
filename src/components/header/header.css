@@ -165,16 +165,16 @@
 @media (max-width: 767px) {
   .mobile-menu {
     position: fixed;
-    top: 64px;                           /* Skub menuen ned under headeren */
+    top: 64px; /* Skub menuen ned under headeren */
     left: 0;
-    width: 100vw;                        /* Fuld bredde */
-    height: calc(100vh - 64px);         /* Fuld højde minus header */
+    width: 100vw; /* Fuld bredde */
+    height: calc(100vh - 64px); /* Fuld højde minus header */
     display: flex;
     flex-direction: column;
     background: var(--color-primary);
     padding: 16px;
-    overflow-y: auto;                   /* Scroll hvis indholdet er for højt */
-    z-index: 50;                         /* Under headerens z-index:1000 */
+    overflow-y: auto; /* Scroll hvis indholdet er for højt */
+    z-index: 50; /* Under headerens z-index:1000 */
   }
 
   .mobile-menu__item {
@@ -183,7 +183,7 @@
   .mobile-menu__link {
     color: var(--color-white);
     text-decoration: none;
-    font-size: 1.25rem;                  /* lidt større touch-venlig tekst */
+    font-size: 1.25rem; /* lidt større touch-venlig tekst */
     padding: 12px 0;
     display: block;
     text-align: center;
