@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { HeaderProps } from "./Header.types";
 import "./Header.css";
+import { Button } from "../buttons/Button";
 
 export function Header({ navItems, onCtaClick }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -72,23 +73,25 @@ export function Header({ navItems, onCtaClick }: HeaderProps) {
           </nav>
 
           {/* Desktop CTA */}
-          <button
+          <Button
+            variant="menu"
             className="cta-button"
             onClick={onCtaClick}
             aria-label="Request a demo"
           >
             REQUEST A DEMO
-          </button>
+          </Button>
 
           {/* Mobile toggle */}
-          <button
-            className="mobile-toggle"
-            onClick={() => setMobileOpen((o) => !o)}
-            aria-label="Toggle menu"
+          <Button
+            variant="menu-mobile"
+            isOpen={mobileOpen}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((o) => !o)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile menu */}
@@ -126,15 +129,15 @@ export function Header({ navItems, onCtaClick }: HeaderProps) {
                 )}
               </div>
             ))}
-            <button
-              className="cta-button"
+            <Button
+              variant="menu"
               onClick={() => {
                 setMobileOpen(false);
                 onCtaClick?.();
               }}
             >
               REQUEST A DEMO
-            </button>
+            </Button>
           </nav>
         )}
       </header>
