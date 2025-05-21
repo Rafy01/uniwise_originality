@@ -1,8 +1,8 @@
 // src/landing/Originality.tsx
 import React from "react";
-import { Header } from "../components/header/Header";
-import { NavItem } from "@/components/header/Header.types";
-import { Button } from "@/components/buttons/Button";
+import { Header } from "../components/Header/Header";
+import { NavItem } from "@/components/Header/Header.types";
+import { Button } from "@/components/Buttons/Button";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
