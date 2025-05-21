@@ -1,7 +1,7 @@
 // src/landing/Originality.tsx
 import React from "react";
-import { Header } from "../components/header/header";
-import { NavItem } from "@/components/header/header.types";
+import { Header } from "../components/Header/Header";
+import { NavItem } from "@/components/Header/Header.types";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -22,9 +22,9 @@ export default function OriginalityPage() {
   return (
     <>
       <Header navItems={navItems} onCtaClick={() => alert("Demo requested!")} />
-      <main id="main-content">{/* Dit landingsside-indhold her */}
-      <a> hallo there     </a>
-
+      <main id="main-content">
+        {/* Dit landingsside-indhold her */}
+        <a> hallo there </a>
       </main>
     </>
   );
