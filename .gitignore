@@ -1,0 +1,46 @@
+# node modules (altid!)
+node_modules/
+
+# output directories
+.out/
+.next/
+dist/
+build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# systemfiler
+.DS_Store
+Thumbs.db
+
+# dotenv / secrets
+.env
+.env.*.local
+.env.local
+
+# editorfiler
+.vscode/
+.idea/
+*.swp
+
+# TypeScript
+*.tsbuildinfo
+
+# testing
+coverage/
+
+# misc
+*.log
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+
+# hvis du bruger LFS, men ikke vil tracke visse store filer:
+*.zip
+*.mp4
+*.mov
