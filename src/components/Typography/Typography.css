@@ -15,42 +15,42 @@
   
   /* Overskrifter – desktop */
   .typography--h1 {
-    font-size: 35pt;
-    line-height: 42pt;
+    font-size: 35px;
+    line-height: 42px;
     font-weight: 400;
   }
   .typography--h2 {
-    font-size: 30pt;
-    line-height: 38pt;
+    font-size: 30px;
+    line-height: 38px;
     font-weight: 700;
   }
   .typography--h3 {
-    font-size: 24pt;
-    line-height: 32pt;
+    font-size: 24px;
+    line-height: 32px;
     font-weight: 400;
   }
   .typography--h4 {
-    font-size: 20pt;
-    line-height: 28pt;
+    font-size: 20px;
+    line-height: 28px;
     font-weight: 700;
   }
   .typography--h5 {
-    font-size: 20pt;
-    line-height: 28pt;
+    font-size: 20px;
+    line-height: 28px;
     font-weight: 700;
   }
   
   /* Brødtekst */
   .typography--body {
-    font-size: 18pt;
-    line-height: 24pt;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 400;
   }
   
   /* Links – primær */
   .typography--link-primary {
-    font-size: 16pt;
-    line-height: 24pt;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 400;
     color: var(--color-link-primary);
     text-decoration: none;
@@ -64,8 +64,8 @@
   
   /* Links – sekundær */
   .typography--link-secondary {
-    font-size: 16pt;
-    line-height: 24pt;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 400;
     color: var(--color-link-secondary);
     text-decoration: none;
@@ -80,30 +80,30 @@
   /* Tablet & mobil – skaler lidt ned */
   @media (max-width: 767px) {
     .typography--h1 {
-      font-size: 35pt; /* Forbliver samme ifølge dit design */
-      line-height: 42pt;
+      font-size: 35px; /* Forbliver samme ifølge dit design */
+      line-height: 42px;
     }
     .typography--h2 {
-      font-size: 24pt;
-      line-height: 38pt;
+      font-size: 24px;
+      line-height: 38px;
     }
     .typography--h3 {
-      font-size: 20pt;
-      line-height: 32pt;
+      font-size: 20px;
+      line-height: 32px;
     }
     .typography--h4,
     .typography--h5 {
-      font-size: 18pt;
-      line-height: 28pt;
+      font-size: 18px;
+      line-height: 28px;
     }
     .typography--body {
-      font-size: 14pt;
-      line-height: 24pt;
+      font-size: 14px;
+      line-height: 24px;
     }
     .typography--link-primary,
     .typography--link-secondary {
-      font-size: 14pt;
-      line-height: 24pt;
+      font-size: 14px;
+      line-height: 24px;
     }
   }
   
