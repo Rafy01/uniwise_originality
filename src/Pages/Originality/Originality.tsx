@@ -1,15 +1,15 @@
 // src/landing/Originality.tsx
 import React from "react";
 
-import { Header } from "../../components/Header/Header";
-import { NavItem } from "../../components/Header/Header.types";
+import { Header } from "@/components/Header/Header";
+import { NavItem } from "@/components/Header/Header.types";
 import { Button } from "@/components/Buttons/Button";
 import { Typography } from "@/components/Typography/Typography";
 import { Footer } from "@/components/Footer/Footer";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
-  { 
+  {
     label: "ORIGINALITY",
     href: "#originality",
     subItems: [
