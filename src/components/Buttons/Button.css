@@ -24,7 +24,7 @@
 }
 .btn--primary:hover,
 .btn--primary:focus {
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 /* Secondary */
@@ -53,7 +53,9 @@
 }
 .btn--menu:hover,
 .btn--menu:focus {
-  opacity: 0.85;
+  /* opacity: 0.7 !important; */
+  background-color: #546a2b;
+
 }
 
 /* Mobile-burger (vises default, skjules på desktop) */
