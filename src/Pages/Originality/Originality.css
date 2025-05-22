@@ -1,13 +1,161 @@
-.Originality h1 {
+/* Originality.css */
+
+.originality {
+
+  color: #111;
+}
+
+.hero {
+  background: url("/images/originality-hero.jpg") no-repeat center center /
+    cover;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #000;
+}
+
+.hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.Originality p {
-  font-size: 1.25rem;
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
-@media (min-width: 768px) {
-  .mobile-menu {
-    display: none !important;
-  }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.features h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonials {
+  background-color: #f2f7f3;
+  padding: 4rem 1rem;
+}
+
+.testimonials blockquote {
+  border-left: 4px solid #007a33;
+  padding-left: 1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.testimonials ul {
+  list-style: none;
+  padding: 0;
+}
+
+.testimonials li {
+  margin-bottom: 0.5rem;
+}
+
+.insights {
+  padding: 4rem 1rem;
+  background-color: #e6f0eb;
+  text-align: center;
+}
+
+.insights h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #cce3d8;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+.cta-footer {
+  background: #007a33;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cta-footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Accessibility: focus styles */
+button:focus,
+a:focus {
+  outline: 3px solid #f90;
+  outline-offset: 2px;
+}
+
+/* ----------------------------------- new ------------------ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #000;
+  height: 353px;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 115%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.hero-overlay {
+  padding: 5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.hero-inner {
+  margin: 0 80px;
+  text-align: left;
+}
+
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.body {
+  padding: 0 1rem;
 }
