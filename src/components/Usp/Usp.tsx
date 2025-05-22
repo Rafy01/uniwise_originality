@@ -10,7 +10,7 @@ export function Usp() {
       </Typography>
       <div className="usp-grid">
         <div className="usp-item">
-          <Typography variant="h3">
+          <Typography variant="h4">
             Detect paraphrasing, not just copy-paste.
           </Typography>
           <Typography variant="body">
@@ -19,14 +19,14 @@ export function Usp() {
           </Typography>
         </div>
         <div className="usp-item">
-          <Typography variant="h3">-----</Typography>
+          <Typography variant="h4">-----</Typography>
           <Typography variant="body">
             No switching platforms — assessors get a full originality view in
             context.
           </Typography>
         </div>
         <div className="usp-item">
-          <Typography variant="h3">Custom matching & collaboration.</Typography>
+          <Typography variant="h4">Custom matching & collaboration.</Typography>
           <Typography variant="body">
             Compare with licensed sources, internal submissions, or other
             institutions.
