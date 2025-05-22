@@ -1,5 +1,6 @@
 // src/landing/Originality.tsx
 import React from "react";
+
 import { Header } from "../../components/Header/Header";
 import { NavItem } from "../../components/Header/Header.types";
 import { Button } from "@/components/Buttons/Button";
