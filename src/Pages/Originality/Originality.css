@@ -116,6 +116,8 @@
 }
 .body {
   padding: 0 1rem;
+  display: grid;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
