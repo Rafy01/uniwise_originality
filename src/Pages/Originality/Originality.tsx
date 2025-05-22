@@ -62,49 +62,8 @@ export default function OriginalityPage() {
             </div>
           </div>
         </section>
-        <Usp />
-        <SectionSplitter />
-        {/* Features Section */}
         <div className="body">
-          <section
-            className="features"
-            aria-labelledby="features-title"
-            aria-describedby="features-desc"
-            tabIndex={0}
-          >
-            <Typography variant="h2" id="features-title">
-              Key Benefits
-            </Typography>
-            <Typography variant="body" id="features-desc">
-              This section explains the three core strengths of WISEflow
-              Originality.
-            </Typography>
-            <div>
-              <Typography variant="h3">
-                Detect paraphrasing, not just copy-paste.
-              </Typography>
-              <Typography variant="body">
-                AI-powered analysis identifies semantic similarity, rewriting,
-                and unusual writing styles.
-              </Typography>
-            </div>
-            <div>
-              <Typography variant="h3">No switching platforms</Typography>
-              <Typography variant="body">
-                Assessors get a full originality view in context — without
-                leaving your system.
-              </Typography>
-            </div>
-            <div>
-              <Typography variant="h3">
-                Custom matching & collaboration
-              </Typography>
-              <Typography variant="body">
-                Compare with licensed sources, internal submissions, or other
-                institutions — all within one workflow.
-              </Typography>
-            </div>
-          </section>
+          <Usp />
           <SectionSplitter />
 
           {/* Testimonials Section */}
