@@ -44,3 +44,4 @@ coverage/
 *.zip
 *.mp4
 *.mov
+node_modules/
