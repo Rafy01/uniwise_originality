@@ -144,3 +144,56 @@
     align-items: center;
   }
 }
+
+
+/* ───── Testimonials.css (tilføj / erstat) ───── */
+.testimonials-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;          /* ① stræk begge kolonner samme højde */
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Venstre kolonne */
+.testimonials-image {
+  flex: 0 0 40%;
+  margin: 0;
+  display: flex;                 /* ② gør figure selv strækbar */
+  
+}
+
+.testimonials-image img {
+  width: 100%;
+  height: 100%;                  /* ③ match højden på hele flex-raden */
+  object-fit: cover;             /* fyld uden at forvrænge */
+  border-radius: 4px;
+}
+
+/* Højre kolonne */
+.testimonials-content {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Mobile stack */
+@media (max-width: 850px) {
+  .testimonials-inner {
+    flex-direction: column;
+  }
+
+  .testimonials-image,
+  .testimonials-content {
+    flex: none;
+    width: 100%;
+    height: auto;                /* slip højde-lock på små skærme */
+  }
+
+  .testimonials-image img {
+    height: auto;
+  }
+}

@@ -10,6 +10,8 @@ import { Usp } from "@/components/Usp/Usp";
 import { Footer } from "@/components/Footer/Footer";
 import "./Originality.css";
 import { SectionSplitter } from "@/components/SectionSplitter/SectionSplitter";
+import { Accordion } from "@/components/Accordion/Accordion";
+import { testimonials } from "@/data/testimonials";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -66,7 +68,33 @@ export default function OriginalityPage() {
           <Usp />
           <SectionSplitter />
 
-          {/* Testimonials Section */}
+          <section id="testimonials" className="testimonials-section">
+            <div className="testimonials-inner">
+              {/* Venstre kolonne  – billede */}
+              <figure className="testimonials-image">
+                <img
+                  src={"/Exams_uniwise.jpg"}
+                  alt="Students taking digital exams with WISEflow"
+                />
+              </figure>
+
+              {/* Højre kolonne – overskrift + accordion */}
+              <div className="testimonials-content">
+                <Typography
+                  variant="h2"
+                  className="testimonials-heading"
+                >
+                  Testimonials
+                </Typography>
+
+                <Accordion items={testimonials} />
+              </div>
+            </div>
+          </section>
+          <br></br>
+          <SectionSplitter />
+          <br></br>
+          {/* Testimonials Section
           <section
             className="testimonials"
             aria-labelledby="testimonials-heading"
@@ -96,7 +124,7 @@ export default function OriginalityPage() {
               <li>University of Portsmouth – Portsmouth, UK</li>
               <li>Bucerius Law School – Hamburg, Germany</li>
             </ul>
-          </section>
+          </section> */}
 
           {/* Insights Section */}
           <section
