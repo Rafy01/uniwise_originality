@@ -21,7 +21,7 @@
   
   /* lille hover-hint når item er lukket */
   .accordion-item[data-state='closed']:hover {
-    background: #F7F9FA;
+    opacity: 0.9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .06);
   }
   
