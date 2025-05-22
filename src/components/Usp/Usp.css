@@ -1,0 +1,31 @@
+.usp-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .usp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .usp-item h3 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .usp-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .usp-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
