@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { HeaderProps } from "./Header.types";
+import { HeaderProps } from "../Header/Header.types";
 import "./Header.css";
 import { Button } from "../Buttons/Button";
 
