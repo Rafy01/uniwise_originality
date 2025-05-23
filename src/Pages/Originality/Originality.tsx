@@ -12,6 +12,7 @@ import "./Originality.css";
 import { SectionSplitter } from "@/components/SectionSplitter/SectionSplitter";
 import { Accordion } from "@/components/Accordion/Accordion";
 import { testimonials } from "@/data/testimonials";
+import { BlogSection } from "@/components/Sections/BlogSections";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -80,10 +81,7 @@ export default function OriginalityPage() {
 
               {/* Højre kolonne – overskrift + accordion */}
               <div className="testimonials-content">
-                <Typography
-                  variant="h2"
-                  className="testimonials-heading"
-                >
+                <Typography variant="h2" className="testimonials-heading">
                   Testimonials
                 </Typography>
 
@@ -94,116 +92,10 @@ export default function OriginalityPage() {
           <br></br>
           <SectionSplitter />
           <br></br>
-          {/* Testimonials Section
-          <section
-            className="testimonials"
-            aria-labelledby="testimonials-heading"
-            aria-describedby="testimonials-desc"
-            tabIndex={0}
-          >
-            <Typography variant="h2" id="testimonials-heading">
-              Testimonials
-            </Typography>
-            <Typography variant="body" id="testimonials-desc">
-              Real feedback from institutions who use WISEflow Originality.
-            </Typography>
-            <blockquote>
-              <Typography variant="body">
-                "Seamless LMS integration and strong academic integrity –
-                exactly what we needed."
-              </Typography>
-              <footer>
-                <Typography variant="body">
-                  Universidade Aberta – Portugal
-                </Typography>
-              </footer>
-            </blockquote>
-            <ul>
-              <li>The Arctic University – Tromsø, Norway</li>
-              <li>The Open University – Milton Keynes, UK</li>
-              <li>University of Portsmouth – Portsmouth, UK</li>
-              <li>Bucerius Law School – Hamburg, Germany</li>
-            </ul>
-          </section> */}
-
-          {/* Insights Section */}
-          <section
-            className="insights"
-            aria-labelledby="insights-title"
-            aria-describedby="insights-desc"
-            tabIndex={0}
-          >
-            <Typography variant="h2" id="insights-title">
-              Why Do Students Plagiarise
-            </Typography>
-            <Typography variant="body" id="insights-desc">
-              Learn the motivations behind plagiarism and how to address them
-              proactively.
-            </Typography>
-            <Button variant="primary">Read more</Button>
-          </section>
-
-          {/* Cards Section */}
-          <section
-            className="cards"
-            aria-labelledby="resources-title"
-            aria-describedby="resources-desc"
-            tabIndex={0}
-          >
-            <Typography variant="h2" id="resources-title">
-              Resources
-            </Typography>
-            <Typography variant="body" id="resources-desc">
-              Practical guidance for educators to prevent and respond to
-              plagiarism.
-            </Typography>
-            <div className="card">
-              <Typography variant="h4">
-                Help Students Before They Plagiarise
-              </Typography>
-              <Typography variant="body">
-                Explore why students plagiarise – and how educators can act
-                early to prevent it.
-              </Typography>
-              <Button variant="secondary">Read more</Button>
-            </div>
-            <div className="card">
-              <Typography variant="h4">
-                How to Prevent Plagiarism in Education
-              </Typography>
-              <Typography variant="body">
-                Get practical tips on how to guide students away from plagiarism
-                through clear expectations, feedback, and tools.
-              </Typography>
-              <Button variant="secondary">Read more</Button>
-            </div>
-            <div className="card">
-              <Typography variant="h4">
-                5 Smart Tips to Stay Original
-              </Typography>
-              <Typography variant="body">
-                Avoid plagiarism with student-approved strategies. From citing
-                to writing with confidence.
-              </Typography>
-              <Button variant="secondary">Read more</Button>
-            </div>
-          </section>
-
-          {/* CTA Footer Section */}
-          <section
-            className="cta-footer"
-            aria-labelledby="cta-title"
-            aria-describedby="cta-desc"
-            tabIndex={0}
-          >
-            <Typography variant="h2" id="cta-title">
-              Want to see WISEflow Originality in action?
-            </Typography>
-            <Typography variant="body" id="cta-desc">
-              Book a personal demonstration and see it in context.
-            </Typography>
-            <Button variant="primary">Book demo</Button>
-          </section>
+          <BlogSection />
+          <br></br>
+          <SectionSplitter />
+          <br></br>
         </div>
       </main>
       {/* <Footer /> */}
