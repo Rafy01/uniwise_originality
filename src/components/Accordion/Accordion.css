@@ -12,9 +12,7 @@
      Accordion-item
      ───────────────────────────────────────── */
   .accordion-item {
-    border-radius: 8px;
-    border: 1px solid #E0E0E0;
-    background: #FFF;          /* lukket: hvid */
+    border-radius: 5px;
     overflow: hidden;
     transition: background-color 220ms ease, box-shadow 220ms ease;
   }
