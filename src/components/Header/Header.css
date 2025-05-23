@@ -32,6 +32,7 @@
   top: 0;
   z-index: 1000;
   background: var(--color-primary);
+  
 }
 .header__inner {
   max-width: 1200px;
@@ -150,6 +151,7 @@
   color: var(--color-white);
   font-size: 1.5rem;
   cursor: pointer;
+ 
 }
 @media (min-width: 768px) {
   .mobile-toggle {
@@ -179,6 +181,7 @@
 
   .mobile-menu__item {
     margin-bottom: 16px;
+    
   }
   .mobile-menu__link {
     color: var(--color-white);
@@ -187,6 +190,7 @@
     padding: 12px 0;
     display: block;
     text-align: center;
+    
   }
   .mobile-menu__link:hover,
   .mobile-menu__link:focus {
