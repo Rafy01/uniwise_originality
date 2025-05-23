@@ -1,0 +1,39 @@
+/* ----- “Why do students plagiarise” + tre kort  ---------------- */
+
+.blog-section {
+    --green: #73A603;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;                 /* luft mellem hero & grid */
+  }
+  
+  /* 1) Hero-kortet fylder hele bredden */
+  .blog-card--hero {
+    background: var(--green);
+    padding: 2rem;
+  }
+  
+  /* 2) Grid med tre lige store kolonner
+     ---------------------------------- */
+  .blog-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  /* RESPONSIVE --------------------------------------------------- */
+  
+  /* < 768 px  – hero øverst, grid under (én kolonne) */
+  @media (max-width: 48rem) {
+    .blog-section {
+      gap: 2rem;
+    }
+  
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
