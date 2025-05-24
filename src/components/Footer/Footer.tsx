@@ -17,9 +17,7 @@ export function Footer({ className }: { className?: string }) {
 
         <div className="footer__cta">
           <Typography variant="h2">
-            Want to see WISEflow Originality
-            <br />
-            in action?
+            Want to see WISEflow Originality in action?
           </Typography>
 
           <div className="footer__cta-buttons">
