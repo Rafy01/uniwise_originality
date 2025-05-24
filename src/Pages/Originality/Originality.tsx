@@ -1,5 +1,3 @@
-// src/landing/Originality.tsx
-
 import React from "react";
 
 import { Header } from "@/components/Header/Header";
@@ -32,13 +30,23 @@ const navItems: NavItem[] = [
 export default function OriginalityPage() {
   return (
     <>
-      <Header navItems={navItems} onCtaClick={() => alert("Demo requested!")} />
+      {/* ----- Global navigation ----- */}
+      <header>
+        <nav aria-label="Primary navigation">
+          <Header
+            navItems={navItems}
+            onCtaClick={() => alert("Demo requested!")}
+          />
+        </nav>
+      </header>
+
+      {/* ----- Main content ----- */}
       <main id="main-content" className="originality">
         {/* Hero Section */}
         <section className="hero" aria-labelledby="hero-title" tabIndex={0}>
           <span className="sr-only" id="hero-desc">
             This section introduces WISEflow Originality and includes
-            call-to-action buttons.
+            call‑to‑action buttons.
           </span>
 
           <img
@@ -51,62 +59,88 @@ export default function OriginalityPage() {
           <div className="hero-overlay">
             <div className="hero-inner">
               <Typography variant="h1" id="hero-title">
-                Built-in originality. Trusted by universities.
+                Built‑in originality. Trusted by universities.
               </Typography>
+
               <Typography variant="h2">
-                <strong>WISEflow Originality</strong> is the AI-supported
+                <strong>WISEflow Originality</strong> is the AI‑supported
                 plagiarism check that protects academic integrity — directly
                 inside your existing exam flow.
               </Typography>
+
               <div className="hero-buttons">
                 <Button variant="primary">Request a demo</Button>
-                <Button variant="secondary">Blog</Button>
+                {/* Use anchor semantics for navigation */}
+                {/* @ts-ignore – `as` prop depends on Button implementation */}
+                <Button as="a" href="#blog-section" variant="secondary">
+                  Blog
+                </Button>
               </div>
             </div>
           </div>
         </section>
-        <div className="body">
+
+        {/* USP Section */}
+        <section aria-label="Unique selling points">
           <Usp />
-          <SectionSplitter />
+        </section>
 
-          <section
-            id="testimonials"
-            className="testimonials-section"
-            tabIndex={0}
-          >
+        <SectionSplitter />
+
+        {/* Testimonials Section */}
+        <section
+          id="testimonials"
+          className="testimonials-section"
+          aria-labelledby="testimonials-heading"
+          tabIndex={0}
+        >
           <div className="testimonials-inner">
-              {/* Venstre kolonne  – billede */}
-              <figure className="testimonials-image">
-                <img
-                  src={"/Exams_uniwise.jpg"}
-                  alt="Students taking digital exams with WISEflow"
-                />
-              </figure>
+            {/* Left column – image */}
+            <figure className="testimonials-image">
+              <img
+                src="/Exams_uniwise.jpg"
+                alt="Students taking a digital exam with WISEflow"
+              />
+              <figcaption className="sr-only">
+                Example of WISEflow in use during an exam.
+              </figcaption>
+            </figure>
 
-              {/* Højre kolonne – overskrift + accordion */}
-              <div className="testimonials-content">
-                <Typography variant="h2" className="testimonials-heading">
-                  Testimonials
-                </Typography>
+            {/* Right column – heading + accordion */}
+            <div className="testimonials-content">
+              <Typography
+                variant="h2"
+                id="testimonials-heading"
+                className="testimonials-heading"
+              >
+                Testimonials
+              </Typography>
 
-                <Accordion items={testimonials} />
-              </div>
+              <Accordion items={testimonials} />
             </div>
-          </section>
-          <br></br>
-          <SectionSplitter />
-          <br></br>
-          <section id="BlogSection" className="blog-section" tabIndex={0}>
-            <BlogSection />
-          </section>
-          <br></br>
-          <SectionSplitter />
-          <br></br>
-        </div>
+          </div>
+        </section>
+
+        <SectionSplitter />
+
+        {/* Blog Section */}
+        <section
+          id="blog-section"
+          className="blog-section"
+          aria-labelledby="blog-heading"
+          tabIndex={0}
+        >
+          <Typography variant="h2" id="blog-heading" className="sr-only">
+            Blog
+          </Typography>
+          <BlogSection />
+        </section>
       </main>
-      <section id="Footer" className="footer-section" tabIndex={0}>
+
+      {/* ----- Footer ----- */}
+      <footer>
         <Footer />
-      </section>
+      </footer>
     </>
   );
 }
