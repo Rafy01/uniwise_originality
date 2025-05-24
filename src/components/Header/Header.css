@@ -203,3 +203,8 @@
     margin: 24px auto 0;
   }
 }
+.nav__link--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}

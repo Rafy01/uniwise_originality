@@ -1,13 +1,72 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { HeaderProps } from "../Header/Header.types";
-import "./Header.css";
 import { Button } from "../Buttons/Button";
+import "./Header.css";
 
-export function Header({ navItems, onCtaClick }: HeaderProps) {
+type SafeNavItem = {
+  label: string;
+  href: string;
+  isLive?: boolean;
+  subItems?: SafeNavItem[];
+};
+
+type HeaderProps = {
+  onCtaClick?: () => void;
+};
+
+// DIREKTE NAVIGATION HERUNDER
+const navItems: SafeNavItem[] = [
+  {
+    label: "WISEFLOW",
+    href: "#",
+    subItems: [
+      { label: "About WISEflow", href: "#", isLive: false },
+      { label: "How it works", href: "#", isLive: false },
+      { label: "Benefits of digital assessment", href: "#", isLive: false },
+      { label: "Partnering with UNIwise", href: "#", isLive: false },
+    ],
+  },
+  {
+    label: "ORIGINALITY",
+    href: "/originality",
+    isLive: true,
+  },
+  {
+    label: "RESOURCE HUB",
+    href: "#",
+    subItems: [
+      { label: "Digital assessment hub", href: "#", isLive: false },
+      { label: "Testimonials", href: "#testimonials", isLive: true },
+      { label: "Events", href: "#", isLive: false },
+      { label: "Blog", href: "/#blog-section", isLive: true },
+      { label: "Service Centre", href: "#", isLive: false },
+    ],
+  },
+  {
+    label: "ABOUT",
+    href: "#",
+    subItems: [
+      { label: "Vision", href: "#", isLive: false },
+      { label: "Our story", href: "#", isLive: false },
+      { label: "Where we work", href: "#", isLive: false },
+      { label: "Careers", href: "#", isLive: false },
+    ],
+  },
+  {
+    label: "WISEcon25",
+    href: "#",
+    isLive: false,
+  },
+  {
+    label: "CONTACT",
+    href: "#",
+    subItems: [{ label: "Get in touch", href: "#", isLive: false }],
+  },
+];
+
+export function Header({ onCtaClick }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string>("");
 
@@ -20,9 +79,44 @@ export function Header({ navItems, onCtaClick }: HeaderProps) {
     return () => window.removeEventListener("hashchange", updateActive);
   }, []);
 
+  const renderLink = (
+    label: string,
+    href: string,
+    isLive?: boolean,
+    onClick?: () => void,
+    className: string = ""
+  ) => {
+    if (isLive) {
+      return (
+        <a
+          href={href}
+          className={className}
+          aria-current={href === activeHref ? "page" : undefined}
+          onClick={(e) => {
+            setActiveHref(href);
+            onClick?.();
+          }}
+        >
+          {label}
+        </a>
+      );
+    } else {
+      return (
+        <a
+          href="#"
+          className={`${className} nav__link--disabled`}
+          aria-disabled="true"
+          onClick={(e) => e.preventDefault()}
+          style={{ cursor: "not-allowed", opacity: 0.5 }}
+        >
+          {label}
+        </a>
+      );
+    }
+  };
+
   return (
     <>
-      {/* Skip link for tastatur + screenreader */}
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
@@ -42,30 +136,24 @@ export function Header({ navItems, onCtaClick }: HeaderProps) {
           <nav className="nav" aria-label="Primary navigation">
             {navItems.map((item) => (
               <div key={item.href} className="nav__item">
-                <a
-                  href={item.href}
-                  className="nav__link"
-                  aria-current={item.href === activeHref ? "page" : undefined}
-                  onClick={() => setActiveHref(item.href)}
-                >
-                  {item.label}
-                </a>
+                {renderLink(
+                  item.label,
+                  item.href,
+                  item.isLive,
+                  undefined,
+                  "nav__link"
+                )}
                 {item.subItems && (
                   <div className="nav__submenu" role="menu">
-                    {item.subItems.map((sub) => (
-                      <a
-                        key={sub.href}
-                        href={sub.href}
-                        className="nav__link"
-                        role="menuitem"
-                        aria-current={
-                          sub.href === activeHref ? "page" : undefined
-                        }
-                        onClick={() => setActiveHref(sub.href)}
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {item.subItems.map((sub) =>
+                      renderLink(
+                        sub.label,
+                        sub.href,
+                        sub.isLive,
+                        undefined,
+                        "nav__link"
+                      )
+                    )}
                   </div>
                 )}
               </div>
@@ -99,32 +187,24 @@ export function Header({ navItems, onCtaClick }: HeaderProps) {
           <nav className="mobile-menu" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <div key={item.href} className="mobile-menu__item">
-                <a
-                  href={item.href}
-                  className="mobile-menu__link"
-                  onClick={() => {
-                    setMobileOpen(false);
-                    setActiveHref(item.href);
-                  }}
-                >
-                  {item.label}
-                </a>
+                {renderLink(
+                  item.label,
+                  item.href,
+                  item.isLive,
+                  () => setMobileOpen(false),
+                  "mobile-menu__link"
+                )}
                 {item.subItems && (
                   <div>
-                    {item.subItems.map((sub) => (
-                      <a
-                        key={sub.href}
-                        href={sub.href}
-                        className="mobile-menu__link"
-                        style={{ paddingLeft: "24px" }}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          setActiveHref(sub.href);
-                        }}
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {item.subItems.map((sub) =>
+                      renderLink(
+                        sub.label,
+                        sub.href,
+                        sub.isLive,
+                        () => setMobileOpen(false),
+                        "mobile-menu__link"
+                      )
+                    )}
                   </div>
                 )}
               </div>
