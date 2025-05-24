@@ -38,9 +38,9 @@ const navItems: SafeNavItem[] = [
     href: "#",
     subItems: [
       { label: "Digital assessment hub", href: "#", isLive: false },
-      { label: "Testimonials", href: "#testimonials", isLive: true },
+      { label: "Testimonials", href: "#testimonials", isLive: false },
       { label: "Events", href: "#", isLive: false },
-      { label: "Blog", href: "/#blog-section", isLive: true },
+      { label: "Blog", href: "/#blog-section", isLive: false },
       { label: "Service Centre", href: "#", isLive: false },
     ],
   },
