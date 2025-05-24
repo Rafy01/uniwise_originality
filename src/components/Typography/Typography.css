@@ -1,9 +1,9 @@
 /* Root-variabler til font-familie, farver osv. */
 :root {
-    --font-family: system-ui, sans-serif;
+    --font-family: arial, sans-serif; 
     --color-text: #000;
-    --color-link-primary: #85b100;
-    --color-link-secondary: #15803d;
+    --color-link-primary: #000000;
+    --color-link-secondary: #85B100;
   }
   
   /* Reset */
@@ -67,7 +67,7 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: var(--color-link-secondary);
+    color: var(--color-link-secondary) !important;
     text-decoration: none;
     border-bottom: 1px solid var(--color-link-secondary);
     transition: opacity 0.2s ease;
@@ -103,7 +103,6 @@
     .typography--link-primary{
       font-size: 15px;
       line-height: 20px;
-      color: #85B100;
     }
 
     .typography--link-primary,
