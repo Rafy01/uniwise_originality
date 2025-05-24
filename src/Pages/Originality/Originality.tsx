@@ -69,8 +69,12 @@ export default function OriginalityPage() {
           <Usp />
           <SectionSplitter />
 
-          <section id="testimonials" className="testimonials-section">
-            <div className="testimonials-inner">
+          <section
+            id="testimonials"
+            className="testimonials-section"
+            tabIndex={0}
+          >
+          <div className="testimonials-inner">
               {/* Venstre kolonne  – billede */}
               <figure className="testimonials-image">
                 <img
@@ -92,13 +96,17 @@ export default function OriginalityPage() {
           <br></br>
           <SectionSplitter />
           <br></br>
-          <BlogSection />
+          <section id="BlogSection" className="blog-section" tabIndex={0}>
+            <BlogSection />
+          </section>
           <br></br>
           <SectionSplitter />
           <br></br>
         </div>
       </main>
-      {/* <Footer /> */}
+      <section id="Footer" className="footer-section" tabIndex={0}>
+        <Footer />
+      </section>
     </>
   );
 }
