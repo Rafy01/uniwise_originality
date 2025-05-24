@@ -11,6 +11,7 @@ export interface ButtonProps
   variant?: ButtonVariant;
   /** Kun relevant for menu-mobile: om burgeren er åben */
   isOpen?: boolean;
+  hredf?: string; // Tilføjet for at matche tidligere brug
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -46,4 +47,4 @@ export const Button: React.FC<ButtonProps> = ({
       </span>
     </button>
   );
-};
+};  
