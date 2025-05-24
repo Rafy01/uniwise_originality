@@ -1,119 +1,108 @@
 /* ---------- Footer.tsx ---------- */
-import { Linkedin } from "lucide-react";
 import clsx from "clsx";
+import { Icon } from "semantic-ui-react";
 import { Button } from "@/components/Buttons/Button";
+import { Typography } from "@/components/Typography/Typography";
 
 import "./Footer.css";
 
 export function Footer({ className }: { className?: string }) {
   return (
     <footer className={clsx("footer", className)}>
-      {/* Top-row ------------------------------------------------------- */}
+      {/* Top row ----------------------------------------------------- */}
       <div className="footer__top">
         <div className="footer__logo">
-          <img src="/logo-square.svg" alt="UNIwise logo" />
-          <span>UNIwise</span>
+          <img src="/logo-square.png" alt="UNIwise logo" />
         </div>
 
         <div className="footer__cta">
-          <h2>
-            Want to see WISEflow&nbsp;Originality
+          <Typography variant="h2">
+            Want to see WISEflow Originality
             <br />
-            in&nbsp;action?
-          </h2>
+            in action?
+          </Typography>
 
           <div className="footer__cta-buttons">
-            <Button variant="primary">
-              Book demo
-            </Button>
-            <a
-              href="https://www.linkedin.com/company/uniwise"
-              aria-label="UNIwise on LinkedIn"
-              className="footer__linkedin"
-            >
-              <Linkedin size={20} />
-            </a>
+            <Button variant="primary">Book demo</Button>
+
+            {/* LinkedIn-ikon link – samme variant som andre footer links */}
+            <Typography variant="link-secondary">
+              <a
+                href="https://www.linkedin.com/company/uniwise"
+                aria-label="UNIwise on LinkedIn"
+              >
+                <Icon name="linkedin" size="large" />
+              </a>
+            </Typography>
           </div>
         </div>
       </div>
 
-      {/* Link-grid ---------------------------------------------------- */}
+      {/* Link grid --------------------------------------------------- */}
       <nav className="footer__links">
         <div className="footer__col">
-          <h3>Product</h3>
+          <Typography variant="h2">Product</Typography>
           <ul>
-            <li>
-              <a href="#">WISEflow</a>
-            </li>
-            <li>
-              <a href="#">Originality</a>
-            </li>
-            <li>
-              <a href="#">Features</a>
-            </li>
-            <li>
-              <a href="#">Integrations</a>
-            </li>
+            {["WISEflow", "Originality", "Features", "Integrations"].map(
+              (txt) => (
+                <li key={txt}>
+                  <Typography variant="link-secondary">
+                    <a href="#">{txt}</a>
+                  </Typography>
+                </li>
+              )
+            )}
           </ul>
         </div>
 
         <div className="footer__col">
-          <h3>Resources</h3>
+          <Typography variant="h2">Resources</Typography>
           <ul>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Whitepapers</a>
-            </li>
-            <li>
-              <a href="#">Case Studies</a>
-            </li>
-            <li>
-              <a href="#">Webinars</a>
-            </li>
+            {["Blog", "Whitepapers", "Case Studies", "Webinars"].map((txt) => (
+              <li key={txt}>
+                <Typography variant="link-secondary">
+                  <a href="#">{txt}</a>
+                </Typography>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="footer__col">
-          <h3>About UNIwise</h3>
+          <Typography variant="h2">About UNIwise</Typography>
           <ul>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Press</a>
-            </li>
+            {["About Us", "Contact", "Careers", "Press"].map((txt) => (
+              <li key={txt}>
+                <Typography variant="link-secondary">
+                  <a href="#">{txt}</a>
+                </Typography>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="footer__col">
-          <h3>Legal &amp; Security</h3>
+          <Typography variant="h2">Legal & Security</Typography>
           <ul>
-            <li>
-              <a href="#">Privacy &amp; Cookies</a>
-            </li>
-            <li>
-              <a href="#">Data Security</a>
-            </li>
-            <li>
-              <a href="#">Accessibility</a>
-            </li>
+            {["Privacy & Cookies", "Data Security", "Accessibility"].map(
+              (txt) => (
+                <li key={txt}>
+                  <Typography variant="link-secondary">
+                    <a href="#">{txt}</a>
+                  </Typography>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </nav>
 
-      {/* Bottom-bar --------------------------------------------------- */}
+      {/* Bottom bar -------------------------------------------------- */}
       <small className="footer__bottom">
-        Bredskifte Alle 15, 1.tv, 8210 Aarhus V, Denmark
+        Bredskifte Alle&nbsp;15, 1.tv, 8210 Aarhus V, Denmark
         <span className="pipe" />
-        Bartle House, 9 Oxford Court, Manchester, M2 3WQ, United Kingdom
+        Bartle House, 9 Oxford Court, Manchester, M2&nbsp;3WQ,
+        United&nbsp;Kingdom
       </small>
     </footer>
   );
