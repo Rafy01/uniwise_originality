@@ -18,59 +18,16 @@
   gap: 2rem;
   padding: 4rem 0;
 }
-
-.features h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+section{
+  padding: 2rem 1rem;
 }
 
-.testimonials {
-  background-color: #f2f7f3;
-  padding: 4rem 1rem;
-}
 
-.testimonials blockquote {
-  border-left: 4px solid #007a33;
-  padding-left: 1rem;
-  font-style: italic;
-  margin-bottom: 2rem;
-}
 
-.testimonials ul {
-  list-style: none;
-  padding: 0;
-}
 
-.testimonials li {
-  margin-bottom: 0.5rem;
-}
 
-.insights {
-  padding: 4rem 1rem;
-  background-color: #e6f0eb;
-  text-align: center;
-}
 
-.insights h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #cce3d8;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-/* Accessibility: focus styles */
 
 /* ----------------------------------- new ------------------ */
 .hero {
@@ -143,6 +100,9 @@
     flex-direction: column;
     align-items: center;
   }
+  section {
+    padding: 0;
+  }
 }
 
 
@@ -162,7 +122,6 @@
   flex: 0 0 40%;
   margin: 0;
   display: flex;                 /* ② gør figure selv strækbar */
-  
 }
 
 .testimonials-image img {
@@ -172,7 +131,6 @@
   border-radius: 4px;
 }
 
-/* Højre kolonne */
 .testimonials-content {
   flex: 1 1 60%;
   display: flex;
@@ -189,12 +147,48 @@
   .testimonials-image,
   .testimonials-content {
     flex: none;
-    width: 100%;
+    width: auto;               /* ④ gør kolonnerne fuld bredde */
     height: auto;                /* slip højde-lock på små skærme */
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .testimonials-image img {
     height: auto;
   }
+  
 }
 
+/* ---------------------------------------------------
+   Layout helpers – keeps all core content centered
+   on any viewport width without rigid fixed widths.
+   ---------------------------------------------------*/
+   :root {
+    /* Easy tweak point for the overall column width */
+    --content-max-width: 1000;
+  }
+
+  /* ------------- Generic wrappers ------------- */
+  /* header > nav,
+  footer > footer,
+  main {
+    max-width: var(--content-max-width);
+    margin-inline: auto;           
+  }
+   */
+   html {
+    /* Firefox */
+    scrollbar-width: thin;
+  }
+  
+  /* WebKit */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent
+  }
+  
