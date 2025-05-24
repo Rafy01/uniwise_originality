@@ -14,7 +14,7 @@ export const testimonials: AccordionItem[] = [
     content:
       "Students love the instant similarity preview. Staff love the single-sign-on. Everybody wins.",
     author: "Dr. Felix Bauer, ETH Zürich",
-    cta: { label: "Book a demo", href: "/demo" },
+    cta: { label: "Read more", href: "/demo" },
   },
   {
     value: "item-3",
@@ -22,7 +22,7 @@ export const testimonials: AccordionItem[] = [
     content:
       "Students love the instant similarity preview. Staff love the single-sign-on. Everybody wins.",
     author: "Dr. Felix Bauer, ETH Zürich",
-    cta: { label: "Book a demo", href: "/demo" },
+    cta: { label: "Read more", href: "/demo" },
   },
   {
     value: "item-4",
@@ -30,7 +30,7 @@ export const testimonials: AccordionItem[] = [
     content:
       "Students love the instant similarity preview. Staff love the single-sign-on. Everybody wins.",
     author: "Dr. Felix Bauer, ETH Zürich",
-    cta: { label: "Book a demo", href: "/demo" },
+    cta: { label: "Read more", href: "/demo" },
   },
   {
     value: "item-5",
