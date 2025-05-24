@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type BlogCard = {
   title: string;
   excerpt: string;
@@ -6,5 +8,5 @@ export type BlogCard = {
     href: string;
   };
   date?: string;
-  content?: string;
+  content?: ReactNode;
 };
