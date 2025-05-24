@@ -9,7 +9,7 @@ export function Breadcrumbs() {
 
   const items = [
     { label: "Home", to: "/" },
-    { label: "Blog", to: "/#blog-section" },
+    { label: "Originality", to: "/originality" },
     { label: post?.title || slug?.replace(/-/g, " "), to: null },
   ];
 
