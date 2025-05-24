@@ -14,8 +14,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import Originality from "./Pages/Originality/Originality";
-import BlogPost from "./Pages/Blog/BlogPost"; // 👈 vigtigt!
+import BlogPost from "./Pages/Blog/BlogPost";
 import "./index.css";
+import NotFound from "./Pages/NotFound/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/originality" element={<Originality />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </HelmetProvider>
