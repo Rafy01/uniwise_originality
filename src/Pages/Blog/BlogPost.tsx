@@ -17,7 +17,7 @@ export default function BlogPost() {
     <>
       <Helmet>
         <title>
-          {notFound ? "404 – Not Found" : `${post.title} – Originality`}
+          {notFound ? "404 - Not Found" : `${post.title} - Originality`}
         </title>
         <meta name="description" content={notFound ? "" : post.excerpt || ""} />
       </Helmet>
@@ -28,7 +28,7 @@ export default function BlogPost() {
       <main className="blog-post-wrapper" id="main-content">
         {notFound ? (
           <section className="text-center">
-            <Typography variant="h1">404 – Blog not found</Typography>
+            <Typography variant="h1">404 - Blog not found</Typography>
             <Typography variant="body">
               We couldn't find the blog post you're looking for.
             </Typography>
@@ -37,11 +37,12 @@ export default function BlogPost() {
           <>
             <Typography variant="h1">{post.title}</Typography>
             {post.date && (
-              <Typography variant="body" className="blog-post-date">
+              <Typography variant="body"  className="blog-post-date">
                 {post.date}
               </Typography>
             )}
-            <div dangerouslySetInnerHTML={{ __html: post.content || "" }} />
+
+            <section className="blog-content">{post.content}</section>
           </>
         )}
       </main>
