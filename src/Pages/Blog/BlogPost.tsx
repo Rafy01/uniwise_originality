@@ -5,6 +5,7 @@ import { Header } from "@/components/Header/Header";
 import { NavItem } from "@/components/Header/Header.types";
 import { Footer } from "@/components/Footer/Footer";
 import "./BlogPost.css";
+import { Breadcrumbs } from "@/components/Breadcrumbs/Breadcrumbs";
 
 const navItems: NavItem[] = [
   { label: "WISEFLOW", href: "#wiseflow" },
@@ -37,6 +38,7 @@ export default function BlogPost() {
       </Helmet>
 
       <Header navItems={navItems} onCtaClick={() => alert("Demo requested!")} />
+      <Breadcrumbs />
 
       <main className="blog-post-wrapper" id="main-content">
         {notFound ? (
