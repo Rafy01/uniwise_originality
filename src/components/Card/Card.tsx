@@ -13,11 +13,11 @@ export type CardProps = {
 export function Card({ title, excerpt, cta, className }: CardProps) {
   return (
     <article className={clsx("blog-card", className)}>
-      <header>
+
         <Typography variant="h4" >
           <h3 className="blog-card__title">{title}</h3>
         </Typography>
-      </header>
+
 
       <Typography variant="body" className="blog-card__excerpt">
         {excerpt}

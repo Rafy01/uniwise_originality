@@ -2,71 +2,69 @@
 
 /* Fælles styling for ALLE kort  ------------------------------------- */
 .blog-card {
-    --green: #5d8900;                 /* UNIwise-grøn – juster hvis du vil */
-  
-    background: var(--green);
-    border-radius: 6px;
-    color: var(--black, #000);
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 240ms ease, box-shadow 240ms ease;
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.25rem 1rem rgba(0 0 0 / .25);
-  }
-  
-  
+  --green: #5d8900; /* UNIwise-grøn – juster hvis du vil */
 
+  background: var(--green);
+  border-radius: 6px;
+  color: var(--black, #000);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
 
-  
-  /* ------------------------------------------------------------ */
-  /* HERO-varianten – får cardet til at fylde HELE vandrette rum  */
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 1rem rgba(0 0 0 / 0.25);
+}
+
+/* ------------------------------------------------------------ */
+/* HERO-varianten – får cardet til at fylde HELE vandrette rum  */
+.blog-card--hero {
+  flex-direction: column; /* tekst til venstre, knap til højre */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.blog-card--hero .blog-card__text {
+  /* indpak evt. <h3>+<p> i <div> */
+  flex: 1 1 auto;
+}
+
+.blog-card--hero .blog-card__button {
+  align-self: end;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ */
+/* GRID-layoutet styres i BlogSection.css (men smid med)        */
+.blog-grid {
+  display: grid;
+  gap: 2rem;
+  padding-top: 2rem; /* luft mellem hero & grid */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.blog-card__cta {
+  margin-top: 20px; /* luft mellem tekst og knap */
+}
+
+/* ------------------------------------------------------------ */
+/* Mobil tweaks – hero-kortet bliver “stacked”                  */
+@media (max-width: 768px) {
+  /* ~768 px */
   .blog-card--hero {
-    flex-direction: column;              /* tekst til venstre, knap til højre */
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
   }
-  
-  
-  .blog-card--hero .blog-card__text { /* indpak evt. <h3>+<p> i <div> */
-    flex: 1 1 auto;
-  }
-  
+
   .blog-card--hero .blog-card__button {
-    align-self: end;               
-    white-space: nowrap;
-    
+    align-self: flex-start; /* under teksten på mobil */
   }
-  
-  /* ------------------------------------------------------------ */
-  /* GRID-layoutet styres i BlogSection.css (men smid med)        */
-  .blog-grid {
-    display: grid;
-    gap: 2rem;
-    padding-top: 2rem;            /* luft mellem hero & grid */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .blog-card {
+    margin-left: 9px;
+    margin-right: 9px;
   }
-  
-  /* ------------------------------------------------------------ */
-  /* Mobil tweaks – hero-kortet bliver “stacked”                  */
-  @media (max-width: 768px) {         /* ~768 px */
-    .blog-card--hero {
-      flex-direction: column;
-    }
-  
-    .blog-card--hero .blog-card__button {
-      align-self: flex-start;         /* under teksten på mobil */
-    }
-    .blog-card{
-        margin-left: 9px;
-        margin-right: 9px;
-    }
-    .blog-card__cta{
-        margin-top: 20px;
-      }
+  .blog-card__cta {
+    margin-top: 20px;
   }
-  
+}
