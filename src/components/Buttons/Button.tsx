@@ -11,7 +11,9 @@ export interface ButtonProps
   variant?: ButtonVariant;
   /** Kun relevant for menu-mobile: om burgeren er åben */
   isOpen?: boolean;
-  hredf?: string; // Tilføjet for at matche tidligere brug
+  href?: string; // Tilføjet for at matche tidligere brug
+  as?: "a" | "button"; // For at understøtte både <a> og <button>
+  download?: boolean; // For at understøtte download-attributten
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -47,4 +49,4 @@ export const Button: React.FC<ButtonProps> = ({
       </span>
     </button>
   );
-};  
+};
