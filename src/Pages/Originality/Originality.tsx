@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Header } from "@/components/Header/Header";
-import { NavItem } from "@/components/Header/Header.types";
 import { Button } from "@/components/Buttons/Button";
 import { Typography } from "@/components/Typography/Typography";
 import { Usp } from "@/components/Usp/Usp";
@@ -12,33 +11,12 @@ import { Accordion } from "@/components/Accordion/Accordion";
 import { testimonials } from "@/data/testimonials";
 import { BlogSection } from "@/components/Sections/BlogSections";
 
-const navItems: NavItem[] = [
-  { label: "WISEFLOW", href: "#wiseflow" },
-  {
-    label: "ORIGINALITY",
-    href: "#originality",
-    subItems: [
-      { label: "Features", href: "#features" },
-      { label: "Cases", href: "#cases" },
-    ],
-  },
-  { label: "RESOURCES", href: "#resources" },
-  { label: "ABOUT", href: "#about" },
-  { label: "CONTACT", href: "#contact" },
-];
-
 export default function OriginalityPage() {
   return (
     <>
       {/* ----- Global navigation ----- */}
-      <header>
-        <nav aria-label="Primary navigation">
-          <Header
-            navItems={navItems}
-            onCtaClick={() => alert("Demo requested!")}
-          />
-        </nav>
-      </header>
+    
+      <Header/>
 
       {/* ----- Main content ----- */}
       <main id="main-content" className="originality">
