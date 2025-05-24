@@ -285,3 +285,11 @@
 .accordion-item + .accordion-item .accordion-trigger {
   border-top: none;
 }
+
+@media (max-width: 767px) {
+  .accordion-root{
+    gap: 1rem; /* mindre afstand på mobil */
+    width: auto;
+  }
+  
+}
