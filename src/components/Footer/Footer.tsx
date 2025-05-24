@@ -5,11 +5,12 @@ import { Button } from "@/components/Buttons/Button";
 import { Typography } from "@/components/Typography/Typography";
 
 import "./Footer.css";
+import { SectionSplitter } from "../SectionSplitter/SectionSplitter";
 
 export function Footer({ className }: { className?: string }) {
   return (
     <footer className={clsx("footer", className)}>
-      {/* Top row ----------------------------------------------------- */}
+      <SectionSplitter />
       <div className="footer__top">
         <div className="footer__logo">
           <img src="/logo-square.png" alt="UNIwise logo" />
