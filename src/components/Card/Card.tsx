@@ -23,7 +23,7 @@ export function Card({ title, excerpt, cta, className }: CardProps) {
         {excerpt}
       </Typography>
 
-      <Button variant="primary" className="blog-card__cta">
+      <Button variant="primary" className="blog-card__cta" >
         <a href={cta.href}>{cta.label}</a>
       </Button>
     </article>

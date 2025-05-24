@@ -4,21 +4,12 @@ import { preventPlagiarism } from "./prevent-plagiarism";
 import { stayOriginal } from "./stay-original";
 import { heroBlog } from "./hero-blog";
 
-
-
-
-
-
-
-
-
 export const blogCards: BlogCard[] = [
   heroBlog,
   helpStudents,
   preventPlagiarism,
   stayOriginal,
 ];
-
 
 export const blogPosts: Record<string, BlogCard> = {
   "help-students-before-they-plagiarise": helpStudents,
