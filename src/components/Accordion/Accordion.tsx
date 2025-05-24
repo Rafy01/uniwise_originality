@@ -45,7 +45,6 @@ export function Accordion({
           {/* ---------- Header & Trigger ---------- */}
           <AccordionPrimitive.Header className="accordion-header">
             <AccordionPrimitive.Trigger className="accordion-trigger">
-              {/* BÅDE h3 og h4 – vi viser den rigtige med CSS */}
               <span className="accordion-title-wrapper">
                 <Typography variant="h3" className="accordion-title-open">
                   {item.title}
@@ -61,7 +60,10 @@ export function Accordion({
           </AccordionPrimitive.Header>
 
           {/* ---------- Collapsible content ---------- */}
-          <AccordionPrimitive.Content className="accordion-content">
+          <AccordionPrimitive.Content
+            className="accordion-content"
+            tabIndex={0}
+          >
             <div className="accordion-content__inner">
               <Typography variant="body" className="accordion-quote">
                 {item.content}
