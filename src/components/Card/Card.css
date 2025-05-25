@@ -13,6 +13,7 @@
   transition: transform 240ms ease, box-shadow 240ms ease;
 }
 
+
 .blog-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 0.25rem 1rem rgba(0 0 0 / 0.25);
@@ -36,6 +37,11 @@
   align-self: end;
   white-space: nowrap;
 }
+.blog-card__excerpt {
+  /* Let the excerpt grow and push the button downward */
+  flex: 1 1 auto;
+  margin-bottom: 1rem;
+}
 
 /* ------------------------------------------------------------ */
 /* GRID-layoutet styres i BlogSection.css (men smid med)        */
@@ -46,7 +52,8 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 .blog-card__cta {
-  margin-top: 20px; /* luft mellem tekst og knap */
+  margin-top: 5px; /* luft mellem tekst og knap */
+  align-self: end;
 }
 
 /* ------------------------------------------------------------ */
