@@ -73,7 +73,7 @@
 }
 
 /* Skjul burger på desktop */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .btn--menu-mobile {
     display: none;
   }
@@ -118,7 +118,7 @@
 }
 
 /* Downscale knapper på mobil */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .btn--primary,
   .btn--secondary {
     width: 120px;

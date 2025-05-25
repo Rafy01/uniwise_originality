@@ -58,7 +58,7 @@
 .nav {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav {
     display: flex;
     gap: 32px;
@@ -98,7 +98,7 @@
 }
 
 /* Submenu */
-@media (min-width: 768px) {
+@media (min-width: 1023px) {
   .nav__submenu {
     display: none;
     position: absolute;
@@ -125,7 +125,7 @@
 .cta-button {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .cta-button {
     display: inline-block;
     background: var(--color-black);
@@ -151,18 +151,16 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
-@media (min-width: 1001px) {
-  .mobile-toggle {
-    display: none;
-  }
-}
 
 /* Mobilmenu */
 .mobile-menu {
   display: none;
 }
 
-@media (max-width: 1001px) {
+@media (max-width: 1023px) {
+  .mobile-toggle {
+    display: none;
+  }
   .mobile-menu {
     position: fixed;
     top: 64px; /* Skub menuen ned under headeren */
@@ -175,7 +173,6 @@
     padding: 16px;
     overflow-y: auto; /* Scroll hvis indholdet er for højt */
     z-index: 50; /* Under headerens z-index:1000 */
-    background-color: red;
   }
 
   .mobile-menu__item {
