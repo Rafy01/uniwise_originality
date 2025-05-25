@@ -97,12 +97,15 @@ export const helpStudents: BlogCard & {
           marginTop: "2rem",
         }}
       >
-        <Button  variant="primary">
+        <Button
+          as="a"
+          href="/pdf/White%20paper%203%20-%20Why%20students%20turn%20to%20plagiarism.pdf"
+          variant="primary"
+          download
+        >
           Read White Paper
         </Button>
-        <Button variant="secondary">
-          Book a Demo
-        </Button>
+        <Button variant="secondary">Book a Demo</Button>
       </div>
     </>
   ),
