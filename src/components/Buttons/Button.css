@@ -66,9 +66,6 @@
   align-items: center;
   justify-content: center;
 }
-.btn--menu-mobile:hover {
-  outline: 2px solid var(--color-black);
-}
 
 /* Skjul burger på desktop */
 @media (min-width: 1024px) {
