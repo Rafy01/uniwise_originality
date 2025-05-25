@@ -13,18 +13,17 @@ export type CardProps = {
 export function Card({ title, excerpt, cta, className }: CardProps) {
   return (
     <article className={clsx("blog-card", className)}>
-
-        <Typography variant="h4" >
-          <h3 className="blog-card__title">{title}</h3>
-        </Typography>
-
+      <Typography variant="h4">
+        <h3 className="blog-card__title">{title}</h3>
+      </Typography>
 
       <Typography variant="body" className="blog-card__excerpt">
         {excerpt}
       </Typography>
 
-      <Button variant="primary" className="blog-card__cta" >
-        <a href={cta.href}>{cta.label}</a>
+     
+      <Button className="accordion-inner-cta" variant="primary" href={cta.href}>
+        {cta.label}
       </Button>
     </article>
   );
