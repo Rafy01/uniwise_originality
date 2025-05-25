@@ -19,7 +19,7 @@ export function Usp() {
           </Typography>
         </div>
         <div className="usp-item">
-          <Typography variant="h4">-----</Typography>
+          <Typography variant="h4">Stay focused - assess in flow</Typography>
           <Typography variant="body">
             No switching platforms — assessors get a full originality view in
             context.

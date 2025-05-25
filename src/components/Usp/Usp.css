@@ -1,18 +1,34 @@
-.usp-section {
-    padding: 2rem ;
-  }
-  
-  .usp-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    width: 100%;
-  }
-  
+/* src/components/Usp.css */
 
-  @media (min-width: 768px) {
-    .usp-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+.usp-section {
+  padding: 2rem;
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.usp-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.usp-item h4 {
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+  min-height: calc(1.4em * 1);
+}
+
+.usp-item p {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .usp-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
+  .usp-item h4 {
+    min-height: calc(1.4em * 1); /* altid plads til 2 linjer */
+  }
+}
