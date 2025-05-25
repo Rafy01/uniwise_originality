@@ -59,7 +59,7 @@ export default function OriginalityPage() {
         <section
           aria-label="Unique selling points"
           id="usp-section"
-          className="testimonials-section"
+          className="usp-section"
           tabIndex={0}
         >
           <Usp />
