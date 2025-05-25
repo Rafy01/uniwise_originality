@@ -159,6 +159,8 @@
 
 .accordion-inner-cta {
   margin-left: auto;
+  margin-right: 0.5rem; /* lidt luft til højre */
+  display: flex;
 }
 
 /* ──────────────────────────────────────────
