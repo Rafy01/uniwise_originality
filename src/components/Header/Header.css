@@ -137,10 +137,7 @@
     cursor: pointer;
     transition: background 0.2s ease;
   }
-  .cta-button:hover,
-  .cta-button:focus {
-    background: var(--color-primary-dark);
-  }
+  
 }
 
 /* Mobile toggle */
