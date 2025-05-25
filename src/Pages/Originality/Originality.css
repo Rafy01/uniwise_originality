@@ -50,6 +50,8 @@ footer {
   color: #000;
   height: 353px;
   padding: 4rem 1rem;
+  border-radius: 0 0 5px 5px;
+
 }
 
 .hero-bg {
