@@ -104,14 +104,14 @@ export const stayOriginal: BlogCard & {
           flexWrap: "wrap",
         }}
       >
-        <Button
+        {/* <Button
           as="a"
           href="/pdf/White%20paper%203%20-%20Why%20students%20turn%20to%20plagiarism.pdf"
           variant="primary"
           download
         >
           Read White Paper
-        </Button>
+        </Button> */}
         <Button href="/book-demo" variant="secondary">
           Book a Demo
         </Button>
