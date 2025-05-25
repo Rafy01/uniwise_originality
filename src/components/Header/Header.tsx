@@ -100,7 +100,7 @@ export function Header({ onCtaClick }: HeaderProps) {
 
       timeoutRef.current = setTimeout(() => {
         setScrollDirection("up");
-      }, 10000);
+      }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -108,7 +108,7 @@ export function Header({ onCtaClick }: HeaderProps) {
     // 👇 Start inaktivitetstimer ved load (selv uden scroll)
     timeoutRef.current = setTimeout(() => {
       setScrollDirection("up");
-    }, 1000);
+    }, 5000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
