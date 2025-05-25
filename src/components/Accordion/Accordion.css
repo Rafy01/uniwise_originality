@@ -5,7 +5,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* afstand mellem items */;
+  gap: 1rem; /* afstand mellem items */
+  
 }
 
 /* ─────────────────────────────────────────
@@ -25,7 +26,6 @@
 /* ── ÅBEN tilstand: grøn baggrund (#73A603) ───────────────────────── */
 .accordion-item[data-state="open"] {
   background: #73a603;
-
 }
 
 /* ─────────────────────────────────────────
@@ -36,20 +36,6 @@
   display: flex;
   align-items: center;
   width: 100%;
-}
-
-/* knappen der åbner/lukker */
-.accordion-trigger {
-  all: unset;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  width: 100%;
-  line-height: 1.2;
-  font-size: 1.125rem;
-  font-weight: 600;
 }
 
 /* Tekst + evt. underrubrik container (så vi kan space-between) */
@@ -88,31 +74,15 @@
   background: #222;
 }
 
-
 .accordion-item[data-state="open"] .accordion-cta {
   background: #000; /* sort på grøn ser godt ud */
 }
 
-/* Skjul CTA hvis du kun vil have den synlig når åben:
-     .accordion-item[data-state='closed'] .accordion-cta { display:none; } */
-
-/* ─────────────────────────────────────────
-     Content area + slide animation
-     ───────────────────────────────────────── */
-.accordion-content {
-  overflow: hidden;
-  color: #595959; /* neutral grå – bliver sort på grøn open-state */
-  will-change: height;
-  
-}
-
 .accordion-content__inner {
-  padding: 0 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
+  margin-bottom: 0.5rem; /* lidt luft nederst */
 }
 
 /* **Radix** udregner højde i CSS-var.  */
@@ -191,51 +161,22 @@
   margin-left: auto;
 }
 
-
-/* =======================================================
-   Accordion focus outlines (trigger + content)
-   ===================================================== */
-
-/* 1. TRIGGER  ────────────────────────────────────────── */
-/* top + sider, ingen bundkant */
-.accordion-trigger:focus-visible,
-.accordion-trigger:focus              /* fallback for Safari */
-{
-
-  outline-offset: -2px;               /* flyt den ind, så trigger- og
-                                         content-kanter flugter */
-  box-shadow: none;                   /* nulstil evtl. default */
-  border-bottom-color: transparent;   /* hvis du har border-bund */
-}   
-
-/* Når man TAB’er videre ud af accordion-panelet fjernes outlines */
-.accordion-trigger:focus:not(:focus-visible),
-.accordion-content:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* ---- */
-
 /* ──────────────────────────────────────────
    Accordion – generelle variabler
 ────────────────────────────────────────── */
 :root {
-  --acc-outline-color: #000;      /* skift farve centralt */
+  --acc-outline-color: #000; /* skift farve centralt */
   --acc-outline-size: 3px;
   --acc-outline: var(--acc-outline-size) solid var(--acc-outline-color);
 }
 
 /* ──────────────────────────────────────────
    Wrapper
-────────────────────────────────────────── */ 
-.accordion-root {
-  display: grid;
-  gap: 1.5rem;
-}
+────────────────────────────────────────── */
 
 .accordion-item {
   border-radius: 0.5rem;
-  overflow: hidden;               /* så fokusrammen følger radius */
+  overflow: hidden; /* så fokusrammen følger radius */
 }
 
 /* ──────────────────────────────────────────
@@ -247,23 +188,16 @@
   justify-content: space-between;
   align-items: flex-start;
   background: transparent;
-  padding: 1.5rem;
+  padding: 0.5rem;
   border: none;
   text-align: left;
   cursor: pointer;
 }
 
-.accordion-trigger:focus-visible {
-  outline: none;                  /* skjul default */
-  border-top:    var(--acc-outline);
-  border-left:   var(--acc-outline);
-  border-right:  var(--acc-outline);   /* top + sider  */
-}
-
 /* Chevron roterer ved åben tilstand  */
-.accordion-trigger[data-state='open'] .accordion-chevron{
+.accordion-trigger[data-state="open"] .accordion-chevron {
   transform: rotate(180deg);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 /* ──────────────────────────────────────────
@@ -271,25 +205,12 @@
 ────────────────────────────────────────── */
 .accordion-content {
   background: transparent;
-  padding: 1.5rem;
-}
-
-.accordion-content:focus-visible {
-  outline: none;
-  border-bottom: var(--acc-outline);
-  border-left:   var(--acc-outline);
-  border-right:  var(--acc-outline);   /* bund + sider  */
-}
-
-/* Fjerner evt. dobbelt-border mellem to items  */
-.accordion-item + .accordion-item .accordion-trigger {
-  border-top: none;
+  padding: 0.5rem;
 }
 
 @media (max-width: 767px) {
-  .accordion-root{
+  .accordion-root {
     gap: 1rem; /* mindre afstand på mobil */
     width: auto;
   }
-  
 }
