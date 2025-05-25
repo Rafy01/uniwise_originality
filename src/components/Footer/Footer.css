@@ -49,13 +49,13 @@
 }
 .footer__linkedin {
   display: grid;
-  place-content: center;
-  background: #000;
+  background: #0077B5;
   color: #fff;
   width: 32px;
   height: 32px;
   border-radius: 4px;
   transition: background 0.25s;
+  stroke: none !important;
 }
 .footer__linkedin:hover {
   background: #333;

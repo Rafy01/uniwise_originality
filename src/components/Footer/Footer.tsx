@@ -6,6 +6,7 @@ import { Typography } from "@/components/Typography/Typography";
 
 import "./Footer.css";
 import { SectionSplitter } from "../SectionSplitter/SectionSplitter";
+import { FaLinkedin } from "react-icons/fa"; 
 
 export function Footer({ className }: { className?: string }) {
   return (
@@ -30,7 +31,11 @@ export function Footer({ className }: { className?: string }) {
                 href="https://www.linkedin.com/company/uniwise"
                 aria-label="UNIwise on LinkedIn"
               >
-                <Icon name="linkedin" size="large" />
+                <FaLinkedin
+                  size={20}
+                  className="footer__linkedin "
+                  aria-hidden="true"
+                />
               </a>
             </Typography>
           </div>
