@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../Buttons/Button";
 import "./Header.css";
@@ -16,7 +16,6 @@ type HeaderProps = {
   onCtaClick?: () => void;
 };
 
-// DIREKTE NAVIGATION HERUNDER
 const navItems: SafeNavItem[] = [
   {
     label: "WISEFLOW",
@@ -69,6 +68,56 @@ const navItems: SafeNavItem[] = [
 export function Header({ onCtaClick }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string>("");
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
+    null
+  );
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+
+      // Scroll ned → skjul header
+      if (currentScrollY > lastScrollY && currentScrollY > 64) {
+        setScrollDirection("down");
+      }
+      // Scroll op → vis header
+      else if (currentScrollY < lastScrollY) {
+        setScrollDirection("up");
+      }
+
+      setLastScrollY(currentScrollY);
+
+      // Inaktivitet: vis header efter 1s uden scroll
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        setScrollDirection("up");
+      }, 10000);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // 👇 Start inaktivitetstimer ved load (selv uden scroll)
+    timeoutRef.current = setTimeout(() => {
+      setScrollDirection("up");
+    }, 1000);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [lastScrollY]);
+  
 
   useEffect(() => {
     const updateActive = () => {
@@ -121,9 +170,12 @@ export function Header({ onCtaClick }: HeaderProps) {
         Skip to content
       </a>
 
-      <header className="header">
+      <header
+        className={`header ${
+          scrollDirection === "down" ? "header--hidden" : ""
+        }`}
+      >
         <div className="header__inner">
-          {/* Logo */}
           <a href="/" className="header__logo">
             <img
               src="/UNIwise_logo_white.png"
@@ -132,7 +184,6 @@ export function Header({ onCtaClick }: HeaderProps) {
             />
           </a>
 
-          {/* Desktop navigation */}
           <nav className="nav" aria-label="Primary navigation">
             {navItems.map((item) => (
               <div key={item.href} className="nav__item">
@@ -160,7 +211,6 @@ export function Header({ onCtaClick }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
           <Button
             variant="menu"
             className="cta-button"
@@ -170,7 +220,6 @@ export function Header({ onCtaClick }: HeaderProps) {
             REQUEST A DEMO
           </Button>
 
-          {/* Mobile toggle */}
           <Button
             variant="menu-mobile"
             isOpen={mobileOpen}
@@ -182,7 +231,6 @@ export function Header({ onCtaClick }: HeaderProps) {
           </Button>
         </div>
 
-        {/* Mobile menu */}
         {mobileOpen && (
           <nav className="mobile-menu" aria-label="Mobile navigation">
             {navItems.map((item) => (

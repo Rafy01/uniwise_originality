@@ -208,3 +208,26 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+}
+.header {
+  /* ... dine eksisterende styles ... */
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
