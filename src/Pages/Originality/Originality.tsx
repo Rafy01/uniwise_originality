@@ -14,10 +14,7 @@ import { BlogSection } from "@/components/Sections/BlogSections";
 export default function OriginalityPage() {
   return (
     <>
-      {/* ----- Global navigation ----- */}
-    
-      <Header/>
-
+      <Header />
       {/* ----- Main content ----- */}
       <main id="main-content" className="originality">
         {/* Hero Section */}
@@ -37,11 +34,11 @@ export default function OriginalityPage() {
           <div className="hero-overlay">
             <div className="hero-inner">
               <Typography variant="h1" id="hero-title">
-                Built‑in originality. Trusted by universities.
+                Built-in originality. Trusted by universities.
               </Typography>
 
               <Typography variant="h2">
-                <strong>WISEflow Originality</strong> is the AI‑supported
+                <strong>WISEflow Originality</strong> is the AI-supported
                 plagiarism check that protects academic integrity — directly
                 inside your existing exam flow.
               </Typography>
@@ -50,7 +47,7 @@ export default function OriginalityPage() {
                 <Button variant="primary">Request a demo</Button>
                 {/* Use anchor semantics for navigation */}
                 {/* @ts-ignore – `as` prop depends on Button implementation */}
-                <Button as="a" href="#blog-section" variant="secondary">
+                <Button href="#blog-section" variant="secondary">
                   Blog
                 </Button>
               </div>
@@ -59,7 +56,12 @@ export default function OriginalityPage() {
         </section>
 
         {/* USP Section */}
-        <section aria-label="Unique selling points">
+        <section
+          aria-label="Unique selling points"
+          id="usp-section"
+          className="testimonials-section"
+          tabIndex={0}
+        >
           <Usp />
         </section>
 
