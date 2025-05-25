@@ -3,7 +3,8 @@ import { blogPosts } from "@/data/blogs";
 import { Typography } from "@/components/Typography/Typography";
 import "./Breadcrumbs.css";
 import { Icon } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+import { ChevronRight } from "lucide-react";
+
 
 
 export function Breadcrumbs() {
@@ -34,10 +35,10 @@ export function Breadcrumbs() {
 
             {/* separator – vis kun hvis ikke sidste */}
             {i < items.length - 1 && (
-              <Icon
-                name="angle right"
-                aria-hidden="true"
+              <ChevronRight
+                size={14}
                 className="breadcrumb-separator"
+                aria-hidden="true"
               />
             )}
           </li>
