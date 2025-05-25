@@ -171,23 +171,7 @@ footer {
   }
 }
 
-/* ---------------------------------------------------
-   Layout helpers – keeps all core content centered
-   on any viewport width without rigid fixed widths.
-   ---------------------------------------------------*/
-:root {
-  /* Easy tweak point for the overall column width */
-  --content-max-width: 1000;
-}
 
-/* ------------- Generic wrappers ------------- */
-/* header > nav,
-  footer > footer,
-  main {
-    max-width: var(--content-max-width);
-    margin-inline: auto;           
-  }
-   */
 html {
   /* Firefox */
   scrollbar-width: thin;
