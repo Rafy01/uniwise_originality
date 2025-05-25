@@ -1,9 +1,9 @@
 /* -------- BlogPost.css -------- */
 
 .blog-post-wrapper {
-    max-width: 768px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
   
   .blog-post-wrapper h1 {
