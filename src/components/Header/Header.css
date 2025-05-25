@@ -1,7 +1,7 @@
 /* src/components/header/header.css */
 
 :root {
-  --color-primary: #85B100;
+  --color-primary: #85b100;
   --color-primary-dark: #15803d;
   --color-black: #000000;
   --color-white: #ffffff;
@@ -32,7 +32,6 @@
   top: 0;
   z-index: 1000;
   background: var(--color-primary);
-  
 }
 .header__inner {
   max-width: 1200px;
@@ -151,9 +150,8 @@
   color: var(--color-white);
   font-size: 1.5rem;
   cursor: pointer;
- 
 }
-@media (min-width: 768px) {
+@media (min-width: 1001px) {
   .mobile-toggle {
     display: none;
   }
@@ -163,8 +161,8 @@
 .mobile-menu {
   display: none;
 }
-/* Mobilmenu (kun <768px) */
-@media (max-width: 767px) {
+
+@media (max-width: 1001px) {
   .mobile-menu {
     position: fixed;
     top: 64px; /* Skub menuen ned under headeren */
@@ -177,11 +175,11 @@
     padding: 16px;
     overflow-y: auto; /* Scroll hvis indholdet er for højt */
     z-index: 50; /* Under headerens z-index:1000 */
+    background-color: red;
   }
 
   .mobile-menu__item {
     margin-bottom: 16px;
-    
   }
   .mobile-menu__link {
     color: var(--color-white);
@@ -190,7 +188,6 @@
     padding: 12px 0;
     display: block;
     text-align: center;
-    
   }
   .mobile-menu__link:hover,
   .mobile-menu__link:focus {
@@ -208,7 +205,6 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-
 
 .header {
   position: sticky;
