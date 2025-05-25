@@ -87,7 +87,7 @@
   display: inline-block;
   margin: 0 0.5rem;
 }
-@media (max-width: 540px) {
+@media (max-width: 768px) {
   .footer__logo,
   .footer__cta {
     flex: 1 1 100%;
