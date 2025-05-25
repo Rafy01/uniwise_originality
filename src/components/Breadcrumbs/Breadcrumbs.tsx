@@ -2,13 +2,15 @@ import { Link, useParams } from "react-router-dom";
 import { blogPosts } from "@/data/blogs";
 import { Typography } from "@/components/Typography/Typography";
 import "./Breadcrumbs.css";
+import { Icon } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
+
 
 export function Breadcrumbs() {
   const { slug } = useParams();
   const post = slug ? blogPosts[slug] : null;
 
   const items = [
-    { label: "Home", to: "/" },
     { label: "Originality", to: "/originality" },
     { label: post?.title || slug?.replace(/-/g, " "), to: null },
   ];
@@ -32,9 +34,11 @@ export function Breadcrumbs() {
 
             {/* separator – vis kun hvis ikke sidste */}
             {i < items.length - 1 && (
-              <span className="breadcrumb-separator" aria-hidden="true">
-                →
-              </span>
+              <Icon
+                name="angle right"
+                aria-hidden="true"
+                className="breadcrumb-separator"
+              />
             )}
           </li>
         ))}
