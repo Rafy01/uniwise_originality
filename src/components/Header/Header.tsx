@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../Buttons/Button";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 type SafeNavItem = {
@@ -134,17 +135,17 @@ export function Header({ onCtaClick }: HeaderProps) {
   ) => {
     if (isLive) {
       return (
-        <a
-          href={href}
+        <Link
+          to={href}
           className={className}
-          aria-current={href === activeHref ? "page" : undefined}
-          onClick={(e) => {
+          onClick={() => {
             setActiveHref(href);
             onClick?.();
           }}
+          aria-current={href === activeHref ? "page" : undefined}
         >
           {label}
-        </a>
+        </Link>
       );
     } else {
       return (
@@ -170,7 +171,7 @@ export function Header({ onCtaClick }: HeaderProps) {
         }`}
       >
         <div className="header__inner">
-          <a href="/" className="header__logo">
+          <a href="/originality" className="header__logo">
             <img
               src="/UNIwise_logo_white.png"
               alt="UNIwise logo"
@@ -261,14 +262,14 @@ export function Header({ onCtaClick }: HeaderProps) {
                   <div className="mobile-submenu">
                     {item.subItems.map((sub) =>
                       sub.isLive ? (
-                        <a
+                        <Link
                           key={sub.href}
-                          href={sub.href}
+                          to={sub.href}
                           className="mobile-submenu__link"
                           onClick={() => setMobileOpen(false)}
                         >
                           {sub.label}
-                        </a>
+                        </Link>
                       ) : (
                         <span
                           key={sub.href}
