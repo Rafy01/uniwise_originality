@@ -18,15 +18,15 @@
   gap: 2rem;
   padding: 4rem 0;
 }
-section{
+section {
   padding: 2rem 1rem;
 }
 
-.blog-section{
+.blog-section {
   max-width: 1200px;
   margin-inline: auto;
 }
-.usp-section{
+.usp-section {
   max-width: 1200px;
   margin-inline: auto;
 }
@@ -34,21 +34,14 @@ footer {
   max-width: 1200px;
   margin-inline: auto;
 }
-.section-splitter{
+.section-splitter {
   max-width: 1200px;
   margin-inline: auto;
 }
-.hero{
+.hero {
   max-width: 1200px;
   margin-inline: auto;
 }
-
-
-
-
-
-
-
 
 /* ----------------------------------- new ------------------ */
 .hero {
@@ -126,12 +119,11 @@ footer {
   }
 }
 
-
 /* ───── Testimonials.css (tilføj / erstat) ───── */
 .testimonials-inner {
   display: flex;
   gap: 2rem;
-  align-items: stretch;       
+  align-items: stretch;
   max-width: 1200px;
   margin-inline: auto;
   margin-top: 2rem;
@@ -142,13 +134,13 @@ footer {
 .testimonials-image {
   flex: 0 0 40%;
   margin: 0;
-  display: flex;                 /* ② gør figure selv strækbar */
+  display: flex; /* ② gør figure selv strækbar */
 }
 
 .testimonials-image img {
   width: 100%;
-  height: 100%;                  /* ③ match højden på hele flex-raden */
-  object-fit: cover;             /* fyld uden at forvrænge */
+  height: 100%; /* ③ match højden på hele flex-raden */
+  object-fit: cover; /* fyld uden at forvrænge */
   border-radius: 5px;
 }
 
@@ -168,8 +160,8 @@ footer {
   .testimonials-image,
   .testimonials-content {
     flex: none;
-    width: auto;               /* ④ gør kolonnerne fuld bredde */
-    height: auto;                /* slip højde-lock på små skærme */
+    width: auto; /* ④ gør kolonnerne fuld bredde */
+    height: auto; /* slip højde-lock på små skærme */
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -177,39 +169,37 @@ footer {
   .testimonials-image img {
     height: auto;
   }
-  
 }
 
 /* ---------------------------------------------------
    Layout helpers – keeps all core content centered
    on any viewport width without rigid fixed widths.
    ---------------------------------------------------*/
-   :root {
-    /* Easy tweak point for the overall column width */
-    --content-max-width: 1000;
-  }
+:root {
+  /* Easy tweak point for the overall column width */
+  --content-max-width: 1000;
+}
 
-  /* ------------- Generic wrappers ------------- */
-  /* header > nav,
+/* ------------- Generic wrappers ------------- */
+/* header > nav,
   footer > footer,
   main {
     max-width: var(--content-max-width);
     margin-inline: auto;           
   }
    */
-   html {
-    /* Firefox */
-    scrollbar-width: thin;
-  }
-  
-  /* WebKit */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent
-  }
-  
+html {
+  /* Firefox */
+  scrollbar-width: thin;
+}
+
+/* WebKit */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
