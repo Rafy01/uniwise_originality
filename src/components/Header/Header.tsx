@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "../Buttons/Button";
 import "./Header.css";
 
@@ -72,40 +72,31 @@ export function Header({ onCtaClick }: HeaderProps) {
     null
   );
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
+
+  const toggleSubMenu = (label: string) => {
+    setOpenMobileMenu((prev) => (prev === label ? null : label));
+  };
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-
-      // Scroll ned → skjul header
       if (currentScrollY > lastScrollY && currentScrollY > 64) {
         setScrollDirection("down");
-      }
-      // Scroll op → vis header
-      else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY) {
         setScrollDirection("up");
       }
-
       setLastScrollY(currentScrollY);
-
-      // Inaktivitet: vis header efter 1s uden scroll
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-
       timeoutRef.current = setTimeout(() => {
         setScrollDirection("up");
       }, 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // 👇 Start inaktivitetstimer ved load (selv uden scroll)
     timeoutRef.current = setTimeout(() => {
       setScrollDirection("up");
     }, 5000);
@@ -117,7 +108,6 @@ export function Header({ onCtaClick }: HeaderProps) {
       }
     };
   }, [lastScrollY]);
-  
 
   useEffect(() => {
     const updateActive = () => {
@@ -128,18 +118,13 @@ export function Header({ onCtaClick }: HeaderProps) {
     return () => window.removeEventListener("hashchange", updateActive);
   }, []);
 
-
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
   const renderLink = (
     label: string,
     href: string,
@@ -163,15 +148,12 @@ export function Header({ onCtaClick }: HeaderProps) {
       );
     } else {
       return (
-        <a
-          href="#"
+        <span
           className={`${className} nav__link--disabled`}
-          aria-disabled="true"
-          onClick={(e) => e.preventDefault()}
-          style={{ cursor: "not-allowed", opacity: 0.5 }}
+          title="Coming soon"
         >
           {label}
-        </a>
+        </span>
       );
     }
   };
@@ -247,22 +229,54 @@ export function Header({ onCtaClick }: HeaderProps) {
           <nav className="mobile-menu" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <div key={item.href} className="mobile-menu__item">
-                {renderLink(
-                  item.label,
-                  item.href,
-                  item.isLive,
-                  () => setMobileOpen(false),
-                  "mobile-menu__link"
-                )}
-                {item.subItems && (
-                  <div>
+                <div className="mobile-menu__row">
+                  <div
+                    className={`mobile-menu__link mobile-menu__link--main ${
+                      !item.isLive ? "disabled" : ""
+                    }`}
+                    onClick={() => {
+                      if (item.isLive) {
+                        setMobileOpen(false);
+                      }
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                  {item.subItems && (
+                    <button
+                      className="mobile-menu__toggle"
+                      onClick={() => toggleSubMenu(item.label)}
+                      aria-label="Toggle submenu"
+                    >
+                      {openMobileMenu === item.label ? (
+                        <ChevronUp size={18} />
+                      ) : (
+                        <ChevronDown size={18} />
+                      )}
+                    </button>
+                  )}
+                </div>
+
+                {item.subItems && openMobileMenu === item.label && (
+                  <div className="mobile-submenu">
                     {item.subItems.map((sub) =>
-                      renderLink(
-                        sub.label,
-                        sub.href,
-                        sub.isLive,
-                        () => setMobileOpen(false),
-                        "mobile-menu__link"
+                      sub.isLive ? (
+                        <a
+                          key={sub.href}
+                          href={sub.href}
+                          className="mobile-submenu__link"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {sub.label}
+                        </a>
+                      ) : (
+                        <span
+                          key={sub.href}
+                          className="mobile-submenu__link mobile-submenu__link--disabled"
+                          title="Coming soon"
+                        >
+                          {sub.label}
+                        </span>
                       )
                     )}
                   </div>
