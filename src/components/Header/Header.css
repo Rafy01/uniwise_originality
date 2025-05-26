@@ -90,6 +90,7 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s ease;
+  z-index: 100000;
 }
 .nav__link:hover::after,
 .nav__link:focus::after,
@@ -240,6 +241,7 @@
     border-radius: 4px;
     transition: background 0.2s ease;
     text-align: left;
+    
   }
 
   .mobile-submenu__link:hover {

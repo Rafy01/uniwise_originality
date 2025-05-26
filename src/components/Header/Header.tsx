@@ -19,50 +19,44 @@ type HeaderProps = {
 
 const navItems: SafeNavItem[] = [
   {
-    label: "WISEFLOW",
+    label: "PRODUCT",
     href: "#",
-    subItems: [
-      { label: "About WISEflow", href: "#", isLive: false },
-      { label: "How it works", href: "#", isLive: false },
-      { label: "Benefits of digital assessment", href: "#", isLive: false },
-      { label: "Partnering with UNIwise", href: "#", isLive: false },
-    ],
-  },
-  {
-    label: "ORIGINALITY",
-    href: "/originality",
     isLive: true,
-  },
-  {
-    label: "RESOURCE HUB",
-    href: "#",
     subItems: [
-      { label: "Digital assessment hub", href: "#", isLive: false },
-      { label: "Testimonials", href: "#testimonials", isLive: false },
-      { label: "Events", href: "#", isLive: false },
-      { label: "Blog", href: "/#blog-section", isLive: false },
-      { label: "Service Centre", href: "#", isLive: false },
+      { label: "WISEflow", href: "#", isLive: false },
+      { label: "WISEflow Originality", href: "/originality", isLive: true },
     ],
   },
   {
     label: "ABOUT",
     href: "#",
+    isLive: true,
     subItems: [
-      { label: "Vision", href: "#", isLive: false },
-      { label: "Our story", href: "#", isLive: false },
-      { label: "Where we work", href: "#", isLive: false },
+      { label: "About UNIwise", href: "#", isLive: false },
+      { label: "Blog", href: "#", isLive: false },
       { label: "Careers", href: "#", isLive: false },
     ],
   },
+
   {
-    label: "WISEcon25",
+    label: "EVENTS",
     href: "#",
-    isLive: false,
+    isLive: true,
+    subItems: [
+      { label: "WISEcon25", href: "#", isLive: false },
+      { label: "To be announced", href: "#", isLive: false },
+    ],
   },
+
   {
     label: "CONTACT",
     href: "#",
-    subItems: [{ label: "Get in touch", href: "#", isLive: false }],
+    isLive: true,
+    subItems: [
+      { label: "Service Center", href: "#", isLive: false },
+      { label: "Partnering with UNIwise", href: "#", isLive: false },
+      { label: "Get in touch", href: "#", isLive: false },
+    ],
   },
 ];
 
