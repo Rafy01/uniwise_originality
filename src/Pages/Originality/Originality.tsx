@@ -25,6 +25,18 @@ export default function OriginalityPage() {
           name="keywords"
           content="academic integrity software, AI plagiarism detection,integrated plagiarism tool, Originality by UNIwise, Turnitin alternative for universities, plagiarism check for exams, WISEflow Originality, digital assessment integrity, plagiarism prevention in education"
         />
+        {/* Open Graph: sociale delinger */}
+        <meta property="og:title" content="UNIwise | Originality" />
+        <meta
+          property="og:description"
+          content="AI-drevet plagieringstjek indlejret i WISEflow."
+        />
+        <meta
+          property="og:image"
+          content="/UNIwise_logo_white.png"
+        />
+        <meta property="og:url" content="/originality" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <Header />

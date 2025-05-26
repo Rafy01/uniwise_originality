@@ -9,4 +9,6 @@ export type BlogCard = {
   };
   date?: string;
   content?: ReactNode;
+  tags?: string[];
+  imageUrl?: string;
 };

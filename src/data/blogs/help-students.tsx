@@ -15,6 +15,7 @@ export const helpStudents: BlogCard & {
     href: "/blog/help-students-before-they-plagiarise",
   },
   date: "2025-05-25",
+  imageUrl: "/plagiarism-mindsets.png",
   content: (
     <>
       <Helmet>

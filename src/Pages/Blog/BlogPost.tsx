@@ -12,6 +12,8 @@ export default function BlogPost() {
   const post = blogPosts[slug as keyof typeof blogPosts];
 
   const notFound = !post || !post.content;
+  const fullUrl = `${window.location.origin}/blog/${slug}`;
+
 
   return (
     <>
@@ -20,6 +22,26 @@ export default function BlogPost() {
           {notFound ? "404 - Not Found" : `${post.title} - Originality`}
         </title>
         <meta name="description" content={notFound ? "" : post.excerpt || ""} />
+      </Helmet>
+
+      <Helmet>
+        {/* SEO */}
+        <title>{post.title} | UNIwise Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <meta name="keywords" content={post.tags?.join(", ") || ""} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.imageUrl} />
+        <meta property="og:url" content={fullUrl} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.imageUrl} />
       </Helmet>
 
       <Header onCtaClick={() => alert("Demo requested!")} />
@@ -37,7 +59,7 @@ export default function BlogPost() {
           <>
             <Typography variant="h1">{post.title}</Typography>
             {post.date && (
-              <Typography variant="body"  className="blog-post-date">
+              <Typography variant="body" className="blog-post-date">
                 {post.date}
               </Typography>
             )}

@@ -15,6 +15,7 @@ export const preventPlagiarism: BlogCard & {
     href: "/blog/how-to-avoid-plagiarism",
   },
   date: "2025-05-26",
+  imageUrl: "/dos-and-donts.png",
   content: (
     <>
       <Helmet>

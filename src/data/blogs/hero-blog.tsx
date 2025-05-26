@@ -21,6 +21,7 @@ export const heroBlog: BlogCard & {
     href: "/blog/why-do-students-plagiarise",
   },
   date: "2025-05-28",
+  imageUrl: "/confused-student.png",
   content: (
     <>
       <Helmet>
