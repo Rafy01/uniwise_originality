@@ -10,10 +10,23 @@ import { SectionSplitter } from "@/components/SectionSplitter/SectionSplitter";
 import { Accordion } from "@/components/Accordion/Accordion";
 import { testimonials } from "@/data/testimonials";
 import { BlogSection } from "@/components/Sections/BlogSections";
+import { Helmet } from "react-helmet-async";
 
 export default function OriginalityPage() {
   return (
     <>
+      <Helmet>
+        <title>UNIwise | Originality</title>
+        <meta
+          name="description"
+          content="Discover how Originality ensures academic integrity with AI-powered plagiarism detection – fully integrated into WISEflow for higher education."
+        />
+        <meta
+          name="keywords"
+          content="academic integrity software, AI plagiarism detection,integrated plagiarism tool, Originality by UNIwise, Turnitin alternative for universities, plagiarism check for exams, WISEflow Originality, digital assessment integrity, plagiarism prevention in education"
+        />
+      </Helmet>
+
       <Header />
       {/* ----- Main content ----- */}
       <main id="main-content" className="originality">
