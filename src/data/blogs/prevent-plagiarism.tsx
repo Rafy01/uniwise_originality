@@ -1,6 +1,7 @@
 import { BlogCard } from "./BlogCard";
 import { Typography } from "@/components/Typography/Typography";
 import { Button } from "@/components/Buttons/Button";
+import { Helmet } from "react-helmet-async";
 
 export const preventPlagiarism: BlogCard & {
   date?: string;
@@ -16,6 +17,17 @@ export const preventPlagiarism: BlogCard & {
   date: "2025-05-26",
   content: (
     <>
+      <Helmet>
+        <title>UNIwise | Blog</title>
+        <meta
+          name="description"
+          content="Discover practical strategies to help students avoid plagiarism. From source citation to AI tools – support ethical writing in higher education."
+        />
+        <meta
+          name="keywords"
+          content="how to avoid plagiarism, avoid academic misconduct, plagiarism tips for students, academic integrity, source citation guide, student writing ethics, plagiarism prevention, higher education writing support, AI plagiarism detection, Originality UNIwise, ethical academic writing"
+        />
+      </Helmet>
       <Typography variant="body">
         Plagiarism doesn't always come from bad intentions. Sometimes it's
         confusion, stress - or not knowing the rules. As educators, our job is

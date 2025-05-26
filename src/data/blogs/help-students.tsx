@@ -1,6 +1,7 @@
 import { BlogCard } from "./BlogCard";
 import { Typography } from "@/components/Typography/Typography";
 import { Button } from "@/components/Buttons/Button";
+import { Helmet } from "react-helmet-async";
 
 export const helpStudents: BlogCard & {
   date?: string;
@@ -16,6 +17,17 @@ export const helpStudents: BlogCard & {
   date: "2025-05-25",
   content: (
     <>
+      <Helmet>
+        <title>UNIwise | Blog</title>
+        <meta
+          name="description"
+          content="Support academic integrity by guiding students before they plagiarise. Learn how proactive education and AI tools can prevent misconduct early."
+        />
+        <meta
+          name="keywords"
+          content="prevent plagiarism, student plagiarism support, academic integrity, AI plagiarism tools, proactive plagiarism prevention, plagiarism education, university plagiarism policy, plagiarism awareness, digital assessment, Originality UNIwise, student writing guidance"
+        />
+      </Helmet>
       <figure style={{ marginBottom: "2rem" }}>
         <img
           src="/help-students.png"

@@ -1,6 +1,7 @@
 import { BlogCard } from "./BlogCard";
 import { Typography } from "@/components/Typography/Typography";
 import { Button } from "@/components/Buttons/Button";
+import { Helmet } from "react-helmet-async";
 
 export const stayOriginal: BlogCard & {
   date?: string;
@@ -16,6 +17,17 @@ export const stayOriginal: BlogCard & {
   date: "2025-05-27",
   content: (
     <>
+      <Helmet>
+        <title>UNIwise | Blog</title>
+        <meta
+          name="description"
+          content="Learn 5 effective ways to avoid plagiarism in academic writing. Help students cite sources, paraphrase correctly, and maintain academic honesty."
+        />
+        <meta
+          name="keywords"
+          content="avoid plagiarism, plagiarism tips, academic writing help, paraphrasing guide, source citation tips, academic honesty, how to not plagiarise, plagiarism education, university writing skills, Originality UNIwise, student plagiarism support"
+        />
+      </Helmet>
       <Typography variant="body">
         Plagiarism isn’t always about cheating. Often, it comes from stress,
         confusion, or not knowing the rules. The good news? It’s easy to avoid –
