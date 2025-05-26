@@ -28,26 +28,30 @@ export default function OriginalityPage() {
           content="academic integrity software, AI plagiarism detection,integrated plagiarism tool, Originality by UNIwise, Turnitin alternative for universities, plagiarism check for exams, WISEflow Originality, digital assessment integrity, plagiarism prevention in education"
         />
 
-          <meta property="og:title" content="UNIwise | Originality" />
-          <meta
-            property="og:description"
-            content="AI-drevet plagieringstjek indlejret i WISEflow."
-          />
-          <meta property="og:image" content="/UNIwise_logo_white.png" />
-          <meta property="og:url" content="/originality" />
-          <meta property="og:type" content="website" />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
+        <meta
+          name="title"
+          property="og:title"
+          content="UNIwise | Originality"
+        />
+        <meta
+          name="description"
+          property="og:description"
+          content="AI-drevet plagieringstjek indlejret i WISEflow."
+        />
+        <meta property="og:image" content="/UNIwise_logo_white.png" />
+        <meta property="og:url" content="/originality" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-          {/* Twitter Card */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="UNIwise | Originality" />
-          <meta
-            name="twitter:description"
-            content="AI-drevet plagieringstjek indlejret i WISEflow."
-          />
-          <meta name="twitter:image" content="/UNIwise_logo_white.png" />
-
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UNIwise | Originality" />
+        <meta
+          name="twitter:description"
+          content="AI-drevet plagieringstjek indlejret i WISEflow."
+        />
+        <meta name="twitter:image" content="/UNIwise_logo_white.png" />
       </Helmet>
 
       <Header />
