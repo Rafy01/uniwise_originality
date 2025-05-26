@@ -1,6 +1,5 @@
 /* ---------- Footer.tsx ---------- */
 import clsx from "clsx";
-import { Icon } from "semantic-ui-react";
 import { Button } from "@/components/Buttons/Button";
 import { Typography } from "@/components/Typography/Typography";
 
