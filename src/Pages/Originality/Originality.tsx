@@ -49,7 +49,12 @@ export default function OriginalityPage() {
           name="twitter:description"
           content="AI-drevet plagieringstjek indlejret i WISEflow."
         />
-        <meta name="twitter:image" content={`/UNIwise_logo_white.png`} />
+        {/* <meta name="twitter:image" content={`/UNIwise_logo_white.png`} /> */}
+        <meta
+          name="image"
+          property="og:image"
+          content="/UNIwise_logo_white.png"
+        ></meta>
       </Helmet>
 
       <Header />
