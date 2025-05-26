@@ -48,7 +48,7 @@ export default function OriginalityPage() {
         />
         <meta
           name="twitter:image"
-          content={`${baseUrl}/UNIwise_logo_white.png`}
+          content={`/UNIwise_logo_white.png`}
         />
       </Helmet>
 
