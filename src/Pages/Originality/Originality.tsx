@@ -33,10 +33,10 @@ export default function OriginalityPage() {
           property="og:description"
           content="AI-drevet plagieringstjek indlejret i WISEflow."
         />
-        <meta
+        {/* <meta
           property="og:image"
           content="{`${baseUrl}/UNIwise_logo_white.png"
-        />
+        /> */}
         {/* <meta property="og:url" content={`${baseUrl}/originality`} /> */}
         <meta property="og:type" content="website" />
         <meta property="og:image:width" content="1200" />
