@@ -11,4 +11,4 @@ Landing page for UNIwise's Originality product.
 - `npm run dev` – Start dev server
 - `npm run build` – Build for production
 - `npm run preview` – Preview production build
-- `npm run test` – Run tests using Vitest
+- `npm run test` – Run tests using Vitest (not working currently)
