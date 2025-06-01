@@ -26,7 +26,7 @@
 }
 
 .before {
-  background-color: #6366f1; /* blå */
+  background-color: #68337A; /* blå */
   justify-content: flex-start;
   border-top-left-radius: 9999px;
   border-bottom-left-radius: 9999px;
@@ -46,5 +46,8 @@
 .progress-text {
   pointer-events: none;
   z-index: 3;
+}
+.progress-text-before {
+  color: #ffffff; /* blå */
 }
 

@@ -61,7 +61,7 @@ export const ProgressBar = ({ title, items }: ProgressBarProps) => {
                 aria-valuenow={item.before.value}
                 aria-label="Before value"
               >
-                <Typography variant="body" className="progress-text">
+                <Typography variant="body" className="progress-text-before">
                   Before: {item.before.display}
                 </Typography>
               </div>
