@@ -11,11 +11,9 @@ export const helpStudents: BlogCard & {
   excerpt:
     "If you could identify misconduct early – and support better writing habits – would you?",
   cta: {
-    label:
-      "Read more: Spot Plagiarism Before It Happens – Support Students Proactively",
+    label: "Read more ",
     href: "/blog/help-students-before-they-plagiarise",
-    "aria-label":
-      "Read more: Spot Plagiarism Before It Happens – Support Students Proactively",
+
   },
   date: "2025-05-25",
   imageUrl: "/plagiarism-mindsets.webp",
