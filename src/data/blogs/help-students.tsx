@@ -11,7 +11,8 @@ export const helpStudents: BlogCard & {
   excerpt:
     "If you could identify misconduct early – and support better writing habits – would you?",
   cta: {
-    label: "Read more",
+    label:
+      "Read more: Spot Plagiarism Before It Happens – Support Students Proactively",
     href: "/blog/help-students-before-they-plagiarise",
     "aria-label":
       "Read more: Spot Plagiarism Before It Happens – Support Students Proactively",
