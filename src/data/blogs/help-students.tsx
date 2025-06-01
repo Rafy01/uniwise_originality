@@ -17,6 +17,7 @@ export const helpStudents: BlogCard & {
   },
   date: "2025-05-25",
   imageUrl: "/plagiarism-mindsets.webp",
+  alt: "Teacher guiding a worried student on a laptop to prevent plagiarism",
   content: (
     <>
       <Helmet>

@@ -16,6 +16,7 @@ export const preventPlagiarism: BlogCard & {
   },
   date: "2025-05-26",
   imageUrl: "/dos-and-donts.webp",
+  alt: "Illustration showing 'DOs' (Cite sources) and 'DON’Ts' (Copy text)",
   content: (
     <>
       <Helmet>

@@ -22,6 +22,7 @@ export const heroBlog: BlogCard & {
   },
   date: "2025-05-28",
   imageUrl: "/confused-student.webp",
+  alt: "Student stressed over laptop surrounded by warning signs and feedback icons",
   content: (
     <>
       <Helmet>

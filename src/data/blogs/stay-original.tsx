@@ -16,6 +16,7 @@ export const stayOriginal: BlogCard & {
   },
   date: "2025-05-27",
   imageUrl: "/5ways-plagiarism.webp",
+  alt: "Illustration showing 5 ways to avoid plagiarism – Understand plagiarism, Take notes in your own words, Keep track of sources, Learn to cite correctly, Start early",
   content: (
     <>
       <Helmet>
