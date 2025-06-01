@@ -57,12 +57,13 @@ export const Button: React.FC<ButtonProps> = ({
         onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
         {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {variant !== "menu-mobile" && children}
-        {variant === "menu-mobile" && (
-          <span className="btn__burger" aria-hidden="true">
-            <span className="btn__burger-line" />
-            <span className="btn__burger-line" />
-          </span>
+        {variant !== "menu-mobile" && (
+          <>
+            {children}
+            {"ariaLabel" in rest && typeof rest["ariaLabel"] === "string" && (
+              <span className="visually-hidden"> — {rest["ariaLabel"]}</span>
+            )}
+          </>
         )}
       </a>
     );
