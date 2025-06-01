@@ -58,6 +58,7 @@ export const stayOriginal: BlogCard & {
         style={{ margin: "2rem 0", display: "flex", justifyContent: "center" }}
       >
         <img
+          loading="lazy"
           src="/5ways-plagiarism.webp"
           alt="Illustration: 5 ways to avoid plagiarism – Start early, Do your research, Cite your sources, Think independently, Paraphrase & quote"
           style={{ width: "70%", height: "auto", borderRadius: "5px" }}

@@ -113,30 +113,30 @@ export default function OriginalityPage() {
           className="usp-section"
           tabIndex={0}
         >
-        <ProgressBar
-          title="Impact after adopting Originality"
-          items={[
-            {
-              label: "Plagiarism cases (per 1,000 submissions)",
-              before: { value: 31, display: "31%" },
-              after: { value: 9, display: "9%" },
-            },
-            {
-              label: "Time spent on manual checks",
-              before: { value: 2.4, display: "2.4 hrs" },
-              after: { value: 0.5, display: "0.5 hrs" },
-            },
-            {
-              label: "Feedback score (from instructors, scale 1-5)",
-              before: { value: 2.8, display: "2.8" },
-              after: { value: 4.3, display: "4.3" },
-            },
-            {
-              label: "Trust in the assessment flow (internal surveys)",
-              before: { value: 60, display: "60%" },
-              after: { value: 89, display: "89%" },
-            },
-          ]}
+          <ProgressBar
+            title="Impact after adopting Originality"
+            items={[
+              {
+                label: "Plagiarism cases (per 1,000 submissions)",
+                before: { value: 31, display: "31%" },
+                after: { value: 9, display: "9%" },
+              },
+              {
+                label: "Time spent on manual checks",
+                before: { value: 2.4, display: "2.4 hrs" },
+                after: { value: 0.5, display: "0.5 hrs" },
+              },
+              {
+                label: "Feedback score (from instructors, scale 1-5)",
+                before: { value: 2.8, display: "2.8" },
+                after: { value: 4.3, display: "4.3" },
+              },
+              {
+                label: "Trust in the assessment flow (internal surveys)",
+                before: { value: 60, display: "60%" },
+                after: { value: 89, display: "89%" },
+              },
+            ]}
           />
         </section>
         <SectionSplitter />
@@ -152,6 +152,7 @@ export default function OriginalityPage() {
             {/* Left column – image */}
             <figure className="testimonials-image">
               <img
+                loading="lazy"
                 src="/Exams_uniwise.webp"
                 alt="Students taking a digital exam with WISEflow"
               />
@@ -178,11 +179,7 @@ export default function OriginalityPage() {
         <SectionSplitter />
 
         {/* Blog Section */}
-        <section
-          id="blog-section"
-          className="blog-section"
-          tabIndex={0}
-        >
+        <section id="blog-section" className="blog-section" tabIndex={0}>
           <Typography variant="h2" id="blog-heading" className="blog-heading">
             Blog
           </Typography>

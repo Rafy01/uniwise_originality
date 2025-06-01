@@ -57,6 +57,7 @@ export const preventPlagiarism: BlogCard & {
         style={{ margin: "2rem 0", display: "flex", justifyContent: "center" }}
       >
         <img
+          loading="lazy"
           src="/dos-and-donts.webp"
           alt='Illustration showing "DOs" (Cite sources) and "DON’Ts" (Copy text)'
           style={{ width: "50%", height: "auto", borderRadius: "5px" }}

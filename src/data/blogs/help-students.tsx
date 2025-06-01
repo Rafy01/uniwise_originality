@@ -13,7 +13,6 @@ export const helpStudents: BlogCard & {
   cta: {
     label: "Read blog ",
     href: "/blog/help-students-before-they-plagiarise",
-
   },
   date: "2025-05-25",
   imageUrl: "/plagiarism-mindsets.webp",
@@ -33,6 +32,7 @@ export const helpStudents: BlogCard & {
       </Helmet>
       <figure style={{ marginBottom: "2rem" }}>
         <img
+          loading="lazy"
           src="/help-students.webp"
           alt="Teacher guiding a worried student on a laptop to prevent plagiarism"
           style={{ width: "100%", height: "auto", borderRadius: "4px" }}
@@ -76,6 +76,7 @@ export const helpStudents: BlogCard & {
         }}
       >
         <img
+          loading="lazy"
           src="/plagiarism-mindsets.webp"
           alt="Visual comparison of reactive and proactive plagiarisers, showing traits like stress vs. deliberate cheating"
           style={{

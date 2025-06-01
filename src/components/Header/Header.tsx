@@ -167,6 +167,7 @@ export function Header({ onCtaClick }: HeaderProps) {
         <div className="header__inner">
           <a href="/originality" className="header__logo">
             <img
+              loading="lazy"
               src="/UNIwise_logo_white.webp"
               alt="UNIwise logo"
               className="header__logo-img"
@@ -184,7 +185,7 @@ export function Header({ onCtaClick }: HeaderProps) {
                   "nav__link"
                 )}
                 {item.subItems && (
-                  <div className="nav__submenu" >
+                  <div className="nav__submenu">
                     {item.subItems.map((sub) =>
                       renderLink(
                         sub.label,
