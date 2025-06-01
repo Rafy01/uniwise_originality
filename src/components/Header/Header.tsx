@@ -184,7 +184,7 @@ export function Header({ onCtaClick }: HeaderProps) {
                   "nav__link"
                 )}
                 {item.subItems && (
-                  <div className="nav__submenu" role="menu">
+                  <div className="nav__submenu" >
                     {item.subItems.map((sub) =>
                       renderLink(
                         sub.label,
