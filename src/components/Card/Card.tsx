@@ -21,8 +21,12 @@ export function Card({ title, excerpt, cta, className }: CardProps) {
         {excerpt}
       </Typography>
 
-     
-      <Button className="accordion-inner-cta" variant="primary" href={cta.href}>
+      <Button
+        className="accordion-inner-cta"
+        variant="primary"
+        href={cta.href}
+        aria-label={`Read more: ${title}`}
+      >
         {cta.label}
       </Button>
     </article>
