@@ -11,6 +11,7 @@ import { Accordion } from "@/components/Accordion/Accordion";
 import { testimonials } from "@/data/testimonials";
 import { BlogSection } from "@/components/Sections/BlogSections";
 import { Helmet } from "react-helmet-async";
+import { ProgressBar } from "@/components/ProgressBar/ProgressBar";
 
 export default function OriginalityPage() {
   const baseUrl = "https://originality.marbin.dk";
@@ -94,6 +95,30 @@ export default function OriginalityPage() {
             </div>
           </div>
         </section>
+
+        <ProgressBar
+          title="Impact after adopting Originality"
+          items={[
+            {
+              beforeLabel: "Plagiarism cases (before)",
+              beforeValue: 42,
+              afterLabel: "Plagiarism cases (after)",
+              afterValue: 9,
+            },
+            {
+              beforeLabel: "Time spent grading (before)",
+              beforeValue: 63,
+              afterLabel: "Time spent grading (after)",
+              afterValue: 24,
+            },
+            {
+              beforeLabel: "Student stress (before)",
+              beforeValue: 77,
+              afterLabel: "Student stress (after)",
+              afterValue: 31,
+            },
+          ]}
+        />
 
         {/* USP Section */}
         <section
