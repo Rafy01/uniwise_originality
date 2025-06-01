@@ -6,6 +6,7 @@ export type BlogCard = {
   cta: {
     label: string;
     href: string;
+    ariaLabel?: string;
   };
   date?: string;
   content?: ReactNode;

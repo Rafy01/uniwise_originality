@@ -13,6 +13,7 @@ export const helpStudents: BlogCard & {
   cta: {
     label: "Read more",
     href: "/blog/help-students-before-they-plagiarise",
+    ariaLabel: "Read more: Spot Plagiarism Before It Happens – Support Students Proactively",
   },
   date: "2025-05-25",
   imageUrl: "/plagiarism-mindsets.webp",

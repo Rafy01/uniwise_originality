@@ -28,7 +28,6 @@ export function Card({ title, excerpt, cta, className }: CardProps) {
         aria-label={`Read more: ${title}`}
       >
         {cta.label}
-        <span className="sr-only"></span>
       </Button>
     </article>
   );
