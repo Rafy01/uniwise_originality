@@ -6,7 +6,7 @@ import "./Card.css";
 export type CardProps = {
   title: string;
   excerpt: string;
-  cta: { label: string; href: string };
+  cta: { label: string; href: string; "aria-label"?: string };
   className?: string;
 };
 
@@ -28,6 +28,7 @@ export function Card({ title, excerpt, cta, className }: CardProps) {
         aria-label={`Read more: ${title}`}
       >
         {cta.label}
+
       </Button>
     </article>
   );
