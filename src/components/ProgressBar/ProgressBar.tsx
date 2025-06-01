@@ -1,0 +1,56 @@
+import Typography from "../Typography/Typography";
+import "./ProgressBar.css";
+
+type ProgressValue = {
+  value: number;
+  display: string;
+};
+
+type ProgressItem = {
+  label?: string;
+  before: ProgressValue;
+  after: ProgressValue;
+};
+
+type ProgressBarProps = {
+  title?: string;
+  items: ProgressItem[];
+};
+
+export const ProgressBar = ({ title, items }: ProgressBarProps) => {
+  return (
+    <section className="progress-wrapper">
+      {title && <Typography variant="h2" className="progress-title">{title}</Typography>}
+      {items.map((item, index) => {
+        const total = item.before.value + item.after.value || 1;
+        const beforePct = (item.before.value / total) * 100;
+        const afterPct = (item.after.value / total) * 100;
+
+        return (
+          <div className="progress-group" key={index}>
+            {item.label && (
+              <Typography variant="h5" className="progress-description">
+                {item.label}
+              </Typography>
+            )}
+            <div className="progress-root">
+              <div
+                className="segment before"
+                style={{ width: `${beforePct}%` }}
+              >
+                <Typography variant="body" className="progress-text">
+                  Before: {item.before.display}
+                </Typography>
+              </div>
+              <div className="segment after" style={{ width: `${afterPct}%` }}>
+                <Typography variant="body" className="progress-text">
+                  After: {item.after.display}
+                </Typography>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  );
+};

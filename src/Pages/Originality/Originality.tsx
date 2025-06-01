@@ -11,6 +11,7 @@ import { Accordion } from "@/components/Accordion/Accordion";
 import { testimonials } from "@/data/testimonials";
 import { BlogSection } from "@/components/Sections/BlogSections";
 import { Helmet } from "react-helmet-async";
+import { ProgressBar } from "@/components/ProgressBar/ProgressBar";
 
 export default function OriginalityPage() {
   const baseUrl = "https://originality.marbin.dk";
@@ -90,7 +91,7 @@ export default function OriginalityPage() {
             </div>
           </div>
         </section>
-
+       
         {/* USP Section */}
         <section
           aria-label="Unique selling points"
