@@ -17,7 +17,7 @@ export const heroBlog: BlogCard & {
     "Originality by UNIwise plays a central role: it's more than a tool - it's a guide for trust, " +
     "learning and fairness.",
   cta: {
-    label: "Read more",
+    label: "Read blog",
     href: "/blog/why-do-students-plagiarise",
   },
   date: "2025-05-28",
@@ -37,7 +37,7 @@ export const heroBlog: BlogCard & {
       </Helmet>
       <figure style={{ marginBottom: "2rem" }}>
         <img
-          src="/confused-student.png"
+          src="/confused-student.webp"
           alt="Student stressed over laptop surrounded by warning signs and feedback icons"
           style={{ width: "100%", height: "auto", borderRadius: "5px" }}
         />

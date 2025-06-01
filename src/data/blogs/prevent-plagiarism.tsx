@@ -11,7 +11,7 @@ export const preventPlagiarism: BlogCard & {
   excerpt:
     "Five actionable ways educators can prevent plagiarism before it happens - and support student learning at the same time.",
   cta: {
-    label: "Read more",
+    label: "Read blog",
     href: "/blog/how-to-avoid-plagiarism",
   },
   date: "2025-05-26",

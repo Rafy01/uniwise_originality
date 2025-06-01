@@ -11,7 +11,7 @@ export const helpStudents: BlogCard & {
   excerpt:
     "If you could identify misconduct early – and support better writing habits – would you?",
   cta: {
-    label: "Read more ",
+    label: "Read blog ",
     href: "/blog/help-students-before-they-plagiarise",
 
   },
@@ -75,7 +75,7 @@ export const helpStudents: BlogCard & {
         }}
       >
         <img
-          src="/plagiarism-mindsets.png"
+          src="/plagiarism-mindsets.webp"
           alt="Visual comparison of reactive and proactive plagiarisers, showing traits like stress vs. deliberate cheating"
           style={{
             width: "50%",

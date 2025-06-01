@@ -11,7 +11,7 @@ export const stayOriginal: BlogCard & {
   excerpt:
     "Plagiarism often happens by accident. These five student-friendly tips help avoid it through better habits and smarter planning.",
   cta: {
-    label: "Read more",
+    label: "Read blog",
     href: "/blog/5-ways-to-avoid-plagiarism",
   },
   date: "2025-05-27",
@@ -57,7 +57,7 @@ export const stayOriginal: BlogCard & {
         style={{ margin: "2rem 0", display: "flex", justifyContent: "center" }}
       >
         <img
-          src="/5ways-plagiarism.png"
+          src="/5ways-plagiarism.webp"
           alt="Illustration: 5 ways to avoid plagiarism – Start early, Do your research, Cite your sources, Think independently, Paraphrase & quote"
           style={{ width: "70%", height: "auto", borderRadius: "5px" }}
         />
