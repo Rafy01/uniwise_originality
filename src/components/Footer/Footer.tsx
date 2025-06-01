@@ -5,7 +5,7 @@ import { Typography } from "@/components/Typography/Typography";
 
 import "./Footer.css";
 import { SectionSplitter } from "../SectionSplitter/SectionSplitter";
-import { FaLinkedin } from "react-icons/fa"; 
+import { FaLinkedin } from "react-icons/fa";
 
 export function Footer({ className }: { className?: string }) {
   return (
@@ -25,17 +25,17 @@ export function Footer({ className }: { className?: string }) {
             <Button variant="primary">Book demo</Button>
 
             {/* LinkedIn-ikon link – samme variant som andre footer links */}
-            <Typography variant="link-secondary">
-              <a
-                href="https://www.linkedin.com/company/uniwise"
-                aria-label="UNIwise on LinkedIn"
-              >
-                <FaLinkedin
-                  size={20}
-                  className="footer__linkedin "
-                  aria-hidden="true"
-                />
-              </a>
+            <Typography
+              variant="link-secondary"
+              href="https://www.linkedin.com/company/uniwise"
+              aria-label="UNIwise on LinkedIn"
+            >
+              <span className="sr-only">UNIwise on LinkedIn</span>
+              <FaLinkedin
+                size={20}
+                aria-hidden="true"
+                className="footer__linkedin"
+              />
             </Typography>
           </div>
         </div>
@@ -47,13 +47,16 @@ export function Footer({ className }: { className?: string }) {
           <Typography variant="h2">Product</Typography>
           <ul>
             {["WISEflow", "Originality", "Features", "Integrations"].map(
-              (txt) => (
-                <li key={txt}>
-                  <Typography variant="link-secondary">
-                    <a href="#">{txt}</a>
-                  </Typography>
-                </li>
-              )
+              (txt) => {
+                const href = txt === "Originality" ? "/originality" : "/#";
+                return (
+                  <li key={txt}>
+                    <Typography variant="link-secondary" href={href}>
+                      {txt}
+                    </Typography>
+                  </li>
+                );
+              }
             )}
           </ul>
         </div>
@@ -63,8 +66,8 @@ export function Footer({ className }: { className?: string }) {
           <ul>
             {["Blog", "Whitepapers", "Case Studies", "Webinars"].map((txt) => (
               <li key={txt}>
-                <Typography variant="link-secondary">
-                  <a href="#">{txt}</a>
+                <Typography variant="link-secondary" href="/#">
+                  {txt}
                 </Typography>
               </li>
             ))}
@@ -76,8 +79,8 @@ export function Footer({ className }: { className?: string }) {
           <ul>
             {["About Us", "Contact", "Careers", "Press"].map((txt) => (
               <li key={txt}>
-                <Typography variant="link-secondary">
-                  <a href="#">{txt}</a>
+                <Typography variant="link-secondary" href="/#">
+                  {txt}
                 </Typography>
               </li>
             ))}
@@ -90,8 +93,8 @@ export function Footer({ className }: { className?: string }) {
             {["Privacy & Cookies", "Data Security", "Accessibility"].map(
               (txt) => (
                 <li key={txt}>
-                  <Typography variant="link-secondary">
-                    <a href="#">{txt}</a>
+                  <Typography variant="link-secondary" href="/#">
+                    {txt}
                   </Typography>
                 </li>
               )
