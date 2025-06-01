@@ -1,10 +1,5 @@
 .progress-wrapper {
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-
-  border-radius: 5px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
 .progress-title {
@@ -14,8 +9,6 @@
 .progress-group:not(:last-child) {
   margin-bottom: 16px;
 }
-
-
 
 .progress-root {
   display: flex;
@@ -45,7 +38,7 @@
 }
 
 .after {
-  background-color: #65a30d; 
+  background-color: #65a30d;
   justify-content: flex-end;
   border-top-right-radius: 9999px;
   border-bottom-right-radius: 9999px;
@@ -57,3 +50,4 @@
   pointer-events: none;
   z-index: 3;
 }
+
