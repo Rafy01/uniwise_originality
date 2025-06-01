@@ -67,7 +67,7 @@ export default function OriginalityPage() {
 
           <img
             src="/hero_image.webp"
-            alt=""
+            alt="Adminstratir using WISEflow Originality"
             aria-hidden="true"
             className="hero-bg"
           />
@@ -91,7 +91,7 @@ export default function OriginalityPage() {
             </div>
           </div>
         </section>
-       
+
         {/* USP Section */}
         <section
           aria-label="Unique selling points"
@@ -105,6 +105,40 @@ export default function OriginalityPage() {
           <Usp />
         </section>
 
+        <SectionSplitter />
+
+        <section
+          aria-label="Unique selling points"
+          id="usp-section"
+          className="usp-section"
+          tabIndex={0}
+        >
+        <ProgressBar
+          title="Impact after adopting Originality"
+          items={[
+            {
+              label: "Plagiarism cases (per 1,000 submissions)",
+              before: { value: 31, display: "31%" },
+              after: { value: 9, display: "9%" },
+            },
+            {
+              label: "Time spent on manual checks",
+              before: { value: 2.4, display: "2.4 hrs" },
+              after: { value: 0.5, display: "0.5 hrs" },
+            },
+            {
+              label: "Feedback score (from instructors, scale 1-5)",
+              before: { value: 2.8, display: "2.8" },
+              after: { value: 4.3, display: "4.3" },
+            },
+            {
+              label: "Trust in the assessment flow (internal surveys)",
+              before: { value: 60, display: "60%" },
+              after: { value: 89, display: "89%" },
+            },
+          ]}
+          />
+        </section>
         <SectionSplitter />
 
         {/* Testimonials Section */}
@@ -147,7 +181,6 @@ export default function OriginalityPage() {
         <section
           id="blog-section"
           className="blog-section"
-          aria-labelledby="blog"
           tabIndex={0}
         >
           <Typography variant="h2" id="blog-heading" className="blog-heading">
