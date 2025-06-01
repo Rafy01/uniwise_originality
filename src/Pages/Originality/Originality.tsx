@@ -59,7 +59,7 @@ export default function OriginalityPage() {
       <main id="main-content" className="originality">
         {/* Hero Section */}
         <section className="hero" aria-labelledby="hero-title" tabIndex={0}>
-          <span className="sr-only" id="hero-desc">
+          <span className="sr-only" id="hero-title">
             This section introduces WISEflow Originality and includes
             call‑to‑action buttons.
           </span>
