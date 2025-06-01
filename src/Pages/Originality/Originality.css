@@ -24,6 +24,8 @@
   max-width: 1200px;
   margin-inline: auto;
   padding: 2rem 0;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
 
 }
 .usp-section {
@@ -123,7 +125,8 @@ footer {
   }
 }
 .blog-heading {
-  margin-left: 1rem;
+  margin-left: 1rem !important;
+
 }
 
 /* ───── Testimonials.css (tilføj / erstat) ───── */
