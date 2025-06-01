@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { Typography } from "@/components/Typography/Typography";
-import "./NotFound.css"; // eller din 404 CSS
+import "./NotFound.css";
 
 export default function NotFound() {
   return (
@@ -13,9 +13,13 @@ export default function NotFound() {
       </Helmet>
 
       <Header onCtaClick={() => alert("Demo requested!")} />
-
-      <main className="blog-post-wrapper text-center" id="main-content">
+      <main className="not-found-container" id="main-content">
         <Typography variant="h1">404 – Page Not Found</Typography>
+        <div className="image-row">
+          <img src="/mr wiseflow.webp" alt="Illustration left" />
+          <img src="/ms orginality.webp" alt="Illustration right" />
+        </div>
+
         <Typography variant="body">
           We couldn’t find the page you’re looking for. It may have been
           removed, renamed, or never existed.
