@@ -15,7 +15,7 @@ export const helpStudents: BlogCard & {
     href: "/blog/help-students-before-they-plagiarise",
   },
   date: "2025-05-25",
-  imageUrl: "/plagiarism-mindsets.png",
+  imageUrl: "/plagiarism-mindsets.webp",
   content: (
     <>
       <Helmet>
@@ -31,7 +31,7 @@ export const helpStudents: BlogCard & {
       </Helmet>
       <figure style={{ marginBottom: "2rem" }}>
         <img
-          src="/help-students.png"
+          src="/help-students.webp"
           alt="Teacher guiding a worried student on a laptop to prevent plagiarism"
           style={{ width: "100%", height: "auto", borderRadius: "4px" }}
         />

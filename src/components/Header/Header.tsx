@@ -167,7 +167,7 @@ export function Header({ onCtaClick }: HeaderProps) {
         <div className="header__inner">
           <a href="/originality" className="header__logo">
             <img
-              src="/UNIwise_logo_white.png"
+              src="/UNIwise_logo_white.webp"
               alt="UNIwise logo"
               className="header__logo-img"
             />

@@ -13,7 +13,7 @@ export function Footer({ className }: { className?: string }) {
       <SectionSplitter />
       <div className="footer__top">
         <div className="footer__logo">
-          <img src="/logo-square.png" alt="UNIwise logo" />
+          <img src="/logo-square.webp" alt="UNIwise logo" />
         </div>
 
         <div className="footer__cta">

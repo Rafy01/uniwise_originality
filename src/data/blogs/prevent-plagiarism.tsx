@@ -15,7 +15,7 @@ export const preventPlagiarism: BlogCard & {
     href: "/blog/how-to-avoid-plagiarism",
   },
   date: "2025-05-26",
-  imageUrl: "/dos-and-donts.png",
+  imageUrl: "/dos-and-donts.webp",
   content: (
     <>
       <Helmet>
@@ -56,7 +56,7 @@ export const preventPlagiarism: BlogCard & {
         style={{ margin: "2rem 0", display: "flex", justifyContent: "center" }}
       >
         <img
-          src="/dos-and-donts.png"
+          src="/dos-and-donts.webp"
           alt='Illustration showing "DOs" (Cite sources) and "DON’Ts" (Copy text)'
           style={{ width: "50%", height: "auto", borderRadius: "5px" }}
         />

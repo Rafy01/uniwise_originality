@@ -38,7 +38,7 @@ export default function OriginalityPage() {
           property="og:description"
           content="AI-drevet plagieringstjek indlejret i WISEflow."
         />
-        <meta property="og:image" content="/UNIwise_logo_white.png" />
+        <meta property="og:image" content="/UNIwise_logo_white.webp" />
         <meta property="og:url" content="/originality" />
         <meta property="og:type" content="website" />
         <meta property="og:image:width" content="1200" />
@@ -51,7 +51,7 @@ export default function OriginalityPage() {
           name="twitter:description"
           content="AI-drevet plagieringstjek indlejret i WISEflow."
         />
-        <meta name="twitter:image" content="/UNIwise_logo_white.png" />
+        <meta name="twitter:image" content="/UNIwise_logo_white.webp" />
       </Helmet>
 
       <Header />
@@ -65,7 +65,7 @@ export default function OriginalityPage() {
           </span>
 
           <img
-            src="/hero_image.png"
+            src="/hero_image.webp"
             alt=""
             aria-hidden="true"
             className="hero-bg"
@@ -118,7 +118,7 @@ export default function OriginalityPage() {
             {/* Left column – image */}
             <figure className="testimonials-image">
               <img
-                src="/Exams_uniwise.jpg"
+                src="/Exams_uniwise.webp"
                 alt="Students taking a digital exam with WISEflow"
               />
               <figcaption className="sr-only">

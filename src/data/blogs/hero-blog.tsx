@@ -21,7 +21,7 @@ export const heroBlog: BlogCard & {
     href: "/blog/why-do-students-plagiarise",
   },
   date: "2025-05-28",
-  imageUrl: "/confused-student.png",
+  imageUrl: "/confused-student.webp",
   content: (
     <>
       <Helmet>
@@ -99,7 +99,7 @@ export const heroBlog: BlogCard & {
         style={{ margin: "2rem 0", display: "flex", justifyContent: "center" }}
       >
         <img
-          src="/plagiarism-mindsets.png"
+          src="/plagiarism-mindsets.webp"
           alt="Comparison between reactive and proactive plagiarisers with mindset traits"
           style={{ width: "70%", height: "auto", borderRadius: "5px" }}
         />
