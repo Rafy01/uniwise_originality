@@ -22,7 +22,6 @@ section {
   padding: 2rem 1rem;
 }
 
-
 .blog-section {
   max-width: 1200px;
   margin-inline: auto;
@@ -52,7 +51,6 @@ footer {
   height: 353px;
   padding: 4rem 1rem;
   border-radius: 0 0 5px 5px;
-
 }
 
 .hero-bg {
@@ -119,6 +117,13 @@ footer {
   section {
     padding: 0;
   }
+  .blog-heading {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.blog-heading {
+  margin-left: 1rem;
 }
 
 /* ───── Testimonials.css (tilføj / erstat) ───── */
@@ -171,7 +176,6 @@ footer {
     height: auto;
   }
 }
-
 
 html {
   /* Firefox */

@@ -76,7 +76,7 @@ export default function OriginalityPage() {
               <Typography variant="h1">
                 <strong>WISEflow Originality</strong> is the AI-supported
                 plagiarism check that protects academic integrity — directly
-                inside your existing exam flow.
+                inside WISEflow
               </Typography>
 
               <div className="hero-buttons">
@@ -98,7 +98,7 @@ export default function OriginalityPage() {
           className="usp-section"
           tabIndex={0}
         >
-          <Typography variant="h2" id="usp-title" >
+          <Typography variant="h2" id="usp-title">
             Built-in originality - Trusted by universities.
           </Typography>
           <Usp />
@@ -146,11 +146,10 @@ export default function OriginalityPage() {
         <section
           id="blog-section"
           className="blog-section"
-          aria-labelledby="blog-heading"
+          aria-labelledby="blog"
           tabIndex={0}
         >
-
-          <Typography variant="h2" id="blog-heading" >
+          <Typography variant="h2" id="blog-heading" className="blog-heading">
             Blog
           </Typography>
           <BlogSection />
