@@ -287,3 +287,6 @@
     color: var(--color-white);
   }
 }
+.nav__item--active > .nav__link::after {
+  transform: scaleX(1);
+}

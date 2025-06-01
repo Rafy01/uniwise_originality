@@ -37,7 +37,6 @@ const navItems: SafeNavItem[] = [
       { label: "Careers", href: "#", isLive: false },
     ],
   },
-
   {
     label: "EVENTS",
     href: "#",
@@ -47,7 +46,6 @@ const navItems: SafeNavItem[] = [
       { label: "To be announced", href: "#", isLive: false },
     ],
   },
-
   {
     label: "CONTACT",
     href: "#",
@@ -83,24 +81,16 @@ export function Header({ onCtaClick }: HeaderProps) {
         setScrollDirection("up");
       }
       setLastScrollY(currentScrollY);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      timeoutRef.current = setTimeout(() => {
-        setScrollDirection("up");
-      }, 1000);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setScrollDirection("up"), 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
-    timeoutRef.current = setTimeout(() => {
-      setScrollDirection("up");
-    }, 5000);
+    timeoutRef.current = setTimeout(() => setScrollDirection("up"), 5000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, [lastScrollY]);
 
@@ -175,30 +165,39 @@ export function Header({ onCtaClick }: HeaderProps) {
           </a>
 
           <nav className="nav" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <div key={item.href} className="nav__item">
-                {renderLink(
-                  item.label,
-                  item.href,
-                  item.isLive,
-                  undefined,
-                  "nav__link"
-                )}
-                {item.subItems && (
-                  <div className="nav__submenu">
-                    {item.subItems.map((sub) =>
-                      renderLink(
-                        sub.label,
-                        sub.href,
-                        sub.isLive,
-                        undefined,
-                        "nav__link"
-                      )
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
+            {navItems.map((item) => {
+              const isActive =
+                item.href === activeHref ||
+                item.subItems?.some((sub) => sub.href === activeHref);
+
+              return (
+                <div
+                  key={item.href}
+                  className={`nav__item ${isActive ? "nav__item--active" : ""}`}
+                >
+                  {renderLink(
+                    item.label,
+                    item.href,
+                    item.isLive,
+                    undefined,
+                    "nav__link"
+                  )}
+                  {item.subItems && (
+                    <div className="nav__submenu">
+                      {item.subItems.map((sub) =>
+                        renderLink(
+                          sub.label,
+                          sub.href,
+                          sub.isLive,
+                          undefined,
+                          "nav__link"
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           <Button
@@ -224,16 +223,21 @@ export function Header({ onCtaClick }: HeaderProps) {
         {mobileOpen && (
           <nav className="mobile-menu" aria-label="Mobile navigation">
             {navItems.map((item) => (
-              <div key={item.href} className="mobile-menu__item">
+              <div
+                key={item.href}
+                className={`mobile-menu__item ${
+                  openMobileMenu === item.label
+                    ? "mobile-menu__item--active"
+                    : ""
+                }`}
+              >
                 <div className="mobile-menu__row">
                   <div
                     className={`mobile-menu__link mobile-menu__link--main ${
                       !item.isLive ? "disabled" : ""
                     }`}
                     onClick={() => {
-                      if (item.isLive) {
-                        setMobileOpen(false);
-                      }
+                      if (item.isLive) setMobileOpen(false);
                     }}
                   >
                     {item.label}
